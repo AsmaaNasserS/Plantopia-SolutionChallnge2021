@@ -14,6 +14,7 @@ dependencies:
   cupertino_icons: ^1.0.0
 
 dev_dependencies:
+  font_awesome_flutter: ^8.11.0
   flutter_test:
     sdk: flutter
 
@@ -22,8 +23,6 @@ flutter:
   fonts:
     - family: Raleway
       fonts:
-        - asset: packages/awesome_package/fonts/Raleway-Regular.ttf
-        - asset: packages/awesome_package/fonts/Raleway-Italic.ttf
 
   assets:
   - images/
