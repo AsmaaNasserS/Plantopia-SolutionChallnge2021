@@ -5,6 +5,8 @@ import 'package:gp_app/view/PasswordUpdated.dart';
 import 'package:gp_app/view/ResetPassword.dart';
 import 'package:gp_app/view/SignUp.dart';
 import 'view/Login.dart';
+import 'package:gp_app/view/onboardingScreens/WelcomeScreen1.dart';
+import 'package:gp_app/view/onboardingScreens/ConstWelcomeScreens.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,8 +18,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Login.id,
+      initialRoute: WelcomeScreen1.id,
       routes: {
+        WelcomeScreen1.id:(context)=> WelcomeScreen1(),
+        ConstWelcomeScreen.id:(context)=>ConstWelcomeScreen(),
         SignUp.id: (context) => SignUp(),
         Login.id: (context) => Login(),
         ForgetPassword.id: (context) => ForgetPassword(),

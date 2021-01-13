@@ -17,6 +17,7 @@ dependencies:
   firebase_storage: ^7.0.0
   cloud_firestore: ^0.16.0
   provider: ^4.3.2+3
+  introduction_screen: ^1.0.9
 
 dev_dependencies:
   font_awesome_flutter: ^8.11.0

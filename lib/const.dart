@@ -7,6 +7,7 @@ const kInActiveBackButtonColor = Color(0xFFEBEBEB); // or any grey button
 const kActiveBackButtonColor = Color(0xFFD5D5D5);
 
 const kBottomFootbarContainerColour = Color(0xFFEBEBEB);
+const kButtonTextColour =  Color(0xFFF8F8F8);
 
 const klogInButtonTextStyle = TextStyle(
   fontSize:18.00,
@@ -24,4 +25,5 @@ const kWelcomeScreensDescriptionText = TextStyle(
   fontSize: 15.00,
   fontWeight: FontWeight.bold,
   color: Colors.black,
+  height: 1.5,
 );
