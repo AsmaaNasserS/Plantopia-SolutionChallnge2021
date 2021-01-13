@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gp_app/view/Login.dart';
 import 'package:gp_app/view/PasswordUpdated.dart';
 import '../const.dart';
+import 'Login.dart';
+import 'PasswordUpdated.dart';
 
 class ResetPassword extends StatefulWidget {
   static String id = "ResetPassword";
@@ -72,11 +74,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                 child: GestureDetector(
                   onTap: () {
                     ///* TODO SUBMIT TO submit your new PASSWORD *///
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => PasswordUpdated()),
-                    );
+                    Navigator.pushNamed(context, PasswordUpdated.id);
 
                     ///* TODO ONCLICK CHANGE COLOR *////
                   },
@@ -111,10 +109,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                       InkWell(
                         onTap: () {
                           ///*done TODO  GO TO Sign IN  *////
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Login()),
-                          );
+                          Navigator.pushNamed(context, Login.id);
                           //color: Colors.green;
                         },
                         child: Text(

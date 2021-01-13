@@ -28,18 +28,18 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               SizedBox(height: 50.0),
               TextField(
                 decoration: InputDecoration(
-                    prefixIcon: Icon(
-                      Icons.email,
-                      size: 20,
-                      color: kActiveBackButtonColor,
-                    ),
-                    labelText: 'Email',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey),
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green))),
+                  prefixIcon: Icon(
+                    Icons.email,
+                    size: 20,
+                    color: kActiveBackButtonColor,
+                  ),
+                  labelText: 'Email',
+                  labelStyle: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.grey),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green),
+                  ),
+                ),
               ),
               SizedBox(height: 180.0),
               Container(
@@ -64,10 +64,10 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       child: Text(
                         'Submit',
                         style: TextStyle(
-                            fontSize: 20.00,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Montserrat'),
+                          fontSize: 20.00,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -79,10 +79,12 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     alignment: Alignment.centerRight,
                     padding: EdgeInsets.only(top: 15.0, left: 100.0),
                     child: Row(children: <Widget>[
-                      Text("Already a member! ",
-                          style: TextStyle(
-                            color: Colors.grey,
-                          )),
+                      Text(
+                        "Already a member! ",
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
                       InkWell(
                         onTap: () {
                           ///*done TODO  GO TO Sign IN  */////

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gp_app/view/Login.dart';
 import '../const.dart';
+import 'Login.dart';
 
 class PasswordUpdated extends StatefulWidget {
   static String id = "PasswordUpdated";
@@ -37,9 +38,9 @@ class _PasswordUpdatedState extends State<PasswordUpdated>
                 child: GestureDetector(
                   onTap: () {
                     ///*done TODO LOG IN PAGE *///
-                    Navigator.push(
+                    Navigator.pushNamed(
                       context,
-                      MaterialPageRoute(builder: (context) => Login()),
+                      Login.id,
                     );
 
                     ///* TODO ONCLICK CHANGE COLOR *////

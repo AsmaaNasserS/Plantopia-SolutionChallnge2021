@@ -3,6 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gp_app/view/ForgetPassword.dart';
 import 'package:gp_app/view/SignUp.dart';
 import '../const.dart';
+import 'ForgetPassword.dart';
+import 'SignUp.dart';
+import 'SignUp.dart';
 
 class Login extends StatefulWidget {
   static String id = "Login";
@@ -76,11 +79,10 @@ class _LoginState extends State<Login> {
                     child: InkWell(
                       onTap: () {
                         ///* done TODO  GO TO FORGET PASSWORD */////
-                        Navigator.push(
+                        Navigator.pushNamed(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => ForgetPassword()),
-                        );
+                          ForgetPassword.id
+                          );
                       },
                       child: Text(
                         'Forgot Password',
@@ -184,9 +186,9 @@ class _LoginState extends State<Login> {
                       InkWell(
                         onTap: () {
                           ///* done TODO  GO TO Sign up  */////
-                          Navigator.push(
+                          Navigator.pushNamed(
                             context,
-                            MaterialPageRoute(builder: (context) => SignUp()),
+                            SignUp.id
                           );
                           //   color: Colors.green;
                         },

@@ -37,7 +37,6 @@ class _SignUpState extends State<SignUp> {
                     ),
                     labelText: 'UserName',
                     labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
                         color: Colors.grey),
                     focusedBorder: UnderlineInputBorder(
@@ -59,7 +58,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     labelText: 'Email',
                     labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
+
                         fontWeight: FontWeight.bold,
                         color: Colors.grey),
                     focusedBorder: UnderlineInputBorder(
@@ -84,7 +83,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     labelText: 'Password',
                     labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
+
                         fontWeight: FontWeight.bold,
                         color: Colors.grey),
                     focusedBorder: UnderlineInputBorder(
@@ -188,9 +187,9 @@ class _SignUpState extends State<SignUp> {
                             )),
                         InkWell(
                           onTap: () {
-                            Navigator.push(
+                            Navigator.pushNamed(
                               context,
-                              MaterialPageRoute(builder: (context) => Login()),
+                              Login.id
                             );
 
                             ///*done TODO  GO TO Sign in  */////
