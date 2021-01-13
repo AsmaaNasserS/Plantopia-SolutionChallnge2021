@@ -20,6 +20,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
@@ -28,13 +29,13 @@ class _LoginState extends State<Login> {
           child: Column(
             children: <Widget>[
               Text('Welcome Back !', style: kWelcomeScreensTitleText),
-              SizedBox(height: 80.0),
+              SizedBox(height: mediaQuery.height * 0.1),
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.email,
-                    size: 20,
+                    size: mediaQuery.width * 0.06,
                     color: kActiveBackButtonColor,
                   ),
                   labelText: 'Email',
@@ -48,13 +49,13 @@ class _LoginState extends State<Login> {
                   _emailController.text = value;
                 },
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: mediaQuery.height * 0.03),
               TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.lock,
-                    size: 20,
+                    size: mediaQuery.width * 0.06,
                     color: kActiveBackButtonColor,
                   ),
                   labelText: 'Password',
@@ -69,7 +70,7 @@ class _LoginState extends State<Login> {
                   _passwordController.text = value;
                 },
               ),
-              SizedBox(height: 5.0),
+              SizedBox(height: mediaQuery.height * 0.01),
               Container(
                   // alignment: Alignment.center,
                   padding: EdgeInsets.only(top: 20.0),
@@ -94,9 +95,9 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   )),
-              SizedBox(height: 120.0),
+              SizedBox(height: mediaQuery.height * 0.07),
               Container(
-                height: 50.0,
+                height: mediaQuery.height * 0.09,
                 child: GestureDetector(
                   onTap: () {
                     ///* TODO LOG IN PAGE *////
@@ -120,7 +121,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              SizedBox(height: 30.0),
+              SizedBox(height: mediaQuery.height * 0.04),
               Row(children: <Widget>[
                 Expanded(
                   child: new Container(
@@ -128,7 +129,7 @@ class _LoginState extends State<Login> {
                       child: Divider(
                         //left line
                         color: Colors.black,
-                        height: 36,
+                        height: mediaQuery.height * 0.01,
                       )),
                 ),
                 Text("OR"),
@@ -138,14 +139,14 @@ class _LoginState extends State<Login> {
                       child: Divider(
                         // right line
                         color: Colors.black,
-                        height: 36,
+                        height: mediaQuery.height * 0.01,
                       )),
                 ),
               ]),
               SizedBox(height: 20.0),
               Center(
                 child: Container(
-                  width: 130,
+                  width: mediaQuery.width * 0.35,
                   //color: Colors.red,
                   alignment: Alignment.centerRight,
                   child: Row(
@@ -159,7 +160,7 @@ class _LoginState extends State<Login> {
                           onPressed: () {
                             ///* TODO LOGIN WITH FACEBOOK *///
                           }),
-                      SizedBox(width: 30.0),
+                      SizedBox(width: mediaQuery.width*0.05),
                       IconButton(
                           icon: FaIcon(
                             FontAwesomeIcons.google,
@@ -173,7 +174,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              SizedBox(height: 40.0),
+              SizedBox(height: mediaQuery.height * 0.02),
               Center(
                 child: Container(
                     alignment: Alignment.centerRight,
