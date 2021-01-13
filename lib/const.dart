@@ -25,14 +25,3 @@ const kWelcomeScreensDescriptionText = TextStyle(
   fontWeight: FontWeight.bold,
   color: Colors.black,
 );
-
-
-
-//////////////////// Summary of Colors///////////////
-//  InActiveGreen == > Color(0xFF00B761)
-//  ActiveGreen == >Color(0xFF0B9755)
-// InActiveOrange == > Color(0xFFFE19538)
-// LightGrey ==> Color(0xFFEBEBEB);
-// Grey ==> Color(0xFFD5D5D5);
-// Titles font size ==> 25
-// descriptions font sizes ==> 15

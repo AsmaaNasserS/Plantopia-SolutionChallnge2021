@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "348030821787",
+    "project_id": "gp-plants-3027a",
+    "storage_bucket": "gp-plants-3027a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348030821787:android:27b0b65de1e7f15df7ad3e",
+        "android_client_info": {
+          "package_name": "com.example.gp_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348030821787-1dhsn5ed5bojg736tf42e1bvi52akmq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZP_RwVlp4sUJ7kIcKYF7VK38l2YQXHy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348030821787-1dhsn5ed5bojg736tf42e1bvi52akmq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

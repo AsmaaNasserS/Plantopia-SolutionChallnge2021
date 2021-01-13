@@ -2,88 +2,101 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gp_app/view/Login.dart';
 import '../const.dart';
+
 class SignUp extends StatefulWidget {
-  static String id ="SignUp";
+  static String id = "SignUp";
+
   @override
   _SignUpState createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
+  final _userNameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       resizeToAvoidBottomPadding: false,
-
-        body:
-        Container(
-
-        padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 25.0),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 25.0),
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.start ,
-              children:<Widget> [
-
-              Text('Join us now! !',style: kWelcomeScreensTitleText),
-          SizedBox(height: 80.0),
-
-          TextField(
-            decoration: InputDecoration(
-                prefixIcon: Icon(
-                  Icons.account_circle_outlined,
-                  size: 20,
-                  color: kActiveBackButtonColor,
-                ),
-                labelText: 'UserName',
-                labelStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey),
-
-                focusedBorder: UnderlineInputBorder(
-
-                    borderSide: BorderSide(color: Colors.green))),
-          ),
-          SizedBox(height: 20.0),
-           TextField(
-            decoration: InputDecoration(
-                prefixIcon: Icon(
-                  Icons.email,
-                  size: 20,
-                  color: kActiveBackButtonColor,
-                ),
-                labelText: 'Email',
-                labelStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey),
-
-                focusedBorder: UnderlineInputBorder(
-
-                    borderSide: BorderSide(color: Colors.green))),
-          ),
-
-          SizedBox(height: 20.0),
-          TextField(
-            decoration: InputDecoration(
-                prefixIcon: IconButton(
-                  icon: Icon(
-                    Icons.lock,
-                    size: 20,
-                    color: kActiveBackButtonColor,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text('Join us now! !', style: kWelcomeScreensTitleText),
+                SizedBox(height: 80.0),
+                TextField(
+                  controller: _userNameController,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.account_circle_outlined,
+                      size: 20,
+                      color: kActiveBackButtonColor,
+                    ),
+                    labelText: 'UserName',
+                    labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green),
+                    ),
                   ),
-                  onPressed: () {},
+                  onSubmitted: (value) {
+                    _userNameController.text = value;
+                  },
                 ),
-
-                labelText: 'Password',
-                labelStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey),
-                focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green))),
-            obscureText: true,
-          ),
-
-          SizedBox(height: 5.0),
+                SizedBox(height: 20.0),
+                TextField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.email,
+                      size: 20,
+                      color: kActiveBackButtonColor,
+                    ),
+                    labelText: 'Email',
+                    labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green),
+                    ),
+                  ),
+                  onSubmitted: (value) {
+                    _emailController.text = value;
+                  },
+                ),
+                SizedBox(height: 20.0),
+                TextField(
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                    prefixIcon: IconButton(
+                      icon: Icon(
+                        Icons.lock,
+                        size: 20,
+                        color: kActiveBackButtonColor,
+                      ),
+                      onPressed: () {},
+                    ),
+                    labelText: 'Password',
+                    labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green),
+                    ),
+                  ),
+                  onSubmitted: (value) {
+                    _passwordController.text = value;
+                  },
+                  obscureText: true,
+                ),
+                SizedBox(height: 5.0),
                 SizedBox(height: 100.0),
                 Container(
                   height: 50.0,
@@ -92,11 +105,11 @@ class _SignUpState extends State<SignUp> {
                       ///* TODO SIGN UP PAGE *////
                       ///* TODO ONCLICK CHANGE COLOR *////
                     },
-                    child:Material(
+                    child: Material(
                       borderRadius: BorderRadius.circular(20.0),
-                     // shadowColor: Colors.greenAccent,
+                      // shadowColor: Colors.greenAccent,
                       color: kInActivelogInButtonColor,
-                   //   elevation: 12.0,
+                      //   elevation: 12.0,
                       child: Center(
                         child: Text(
                           'Sign up',
@@ -107,14 +120,16 @@ class _SignUpState extends State<SignUp> {
                               fontFamily: 'Montserrat'),
                         ),
                       ),
-                    ),),
+                    ),
+                  ),
                 ),
                 SizedBox(height: 30.0),
                 Row(children: <Widget>[
                   Expanded(
                     child: new Container(
                         margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-                        child: Divider( //left line
+                        child: Divider(
+                          //left line
                           color: Colors.black,
                           height: 36,
                         )),
@@ -123,12 +138,12 @@ class _SignUpState extends State<SignUp> {
                   Expanded(
                     child: new Container(
                         margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-                        child: Divider( // right line
+                        child: Divider(
+                          // right line
                           color: Colors.black,
                           height: 36,
                         )),
                   ),
-
                 ]),
                 SizedBox(height: 20.0),
                 Center(
@@ -139,16 +154,25 @@ class _SignUpState extends State<SignUp> {
                     child: Row(
                       children: <Widget>[
                         IconButton(
-                            icon: FaIcon(FontAwesomeIcons.facebook,color: Colors.blueAccent,size: 45,),
-                            onPressed: () {  ///* TODO SIGN UP WITH FACEBOOK *///
-                            }
-                        ),
+                            icon: FaIcon(
+                              FontAwesomeIcons.facebook,
+                              color: Colors.blueAccent,
+                              size: 45,
+                            ),
+                            onPressed: () {
+                              ///* TODO SIGN UP WITH FACEBOOK *///
+                            }),
                         SizedBox(width: 30.0),
                         IconButton(
-                            icon: FaIcon(FontAwesomeIcons.google,color: Colors.red,size: 40,),
-                            onPressed: () {  ///* TODO SIGN UP WITH GMAIL *///
-                            }
-                        ),],
+                            icon: FaIcon(
+                              FontAwesomeIcons.google,
+                              color: Colors.red,
+                              size: 40,
+                            ),
+                            onPressed: () {
+                              ///* TODO SIGN UP WITH GMAIL *///
+                            }),
+                      ],
                     ),
                   ),
                 ),
@@ -157,30 +181,35 @@ class _SignUpState extends State<SignUp> {
                   child: Container(
                       alignment: Alignment.centerRight,
                       padding: EdgeInsets.only(top: 15.0, left: 120.0),
-                      child: Row(
-                          children: <Widget>[
-                            Text("Already a member!  " , style:TextStyle(color:Colors.grey,) ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => Login()),
-                                );
-                                ///*done TODO  GO TO Sign in  */////
-                              //  color: Colors.green;
-                              },
-                              child: Text(
-                                'Sign in',
-                                style: TextStyle(
-                                    color: Colors.green,
-                                    fontWeight: FontWeight.bold,
-                                    // fontFamily: 'Cabin',
-                                    decoration: TextDecoration.underline
-                                ),
-                              ),
-                            ),])),
-                )
-        ]),),);
+                      child: Row(children: <Widget>[
+                        Text("Already a member!  ",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            )),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Login()),
+                            );
 
+                            ///*done TODO  GO TO Sign in  */////
+                            //  color: Colors.green;
+                          },
+                          child: Text(
+                            'Sign in',
+                            style: TextStyle(
+                                color: Colors.green,
+                                fontWeight: FontWeight.bold,
+                                // fontFamily: 'Cabin',
+                                decoration: TextDecoration.underline),
+                          ),
+                        ),
+                      ])),
+                )
+              ]),
+        ),
+      ),
+    );
   }
 }
