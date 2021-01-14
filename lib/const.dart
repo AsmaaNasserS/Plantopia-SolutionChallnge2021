@@ -6,6 +6,9 @@ const kActivelogInButtonColor = Color(0xFF0B9755); // login + get started + sign
 const kInActiveBackButtonColor = Color(0xFFEBEBEB); // or any grey button
 const kActiveBackButtonColor = Color(0xFFD5D5D5);
 
+const kActiveOrangeColor = Color(0xFFE19538);
+const kInActiveOrangeColor = Color(0xFFE3AA64);
+
 const kBottomFootbarContainerColour = Color(0xFFEBEBEB);
 const kButtonTextColour =  Color(0xFFF8F8F8);
 
@@ -18,7 +21,8 @@ const klogInButtonTextStyle = TextStyle(
 const kWelcomeScreensTitleText = TextStyle(
   fontSize: 25.00,
   fontWeight: FontWeight.bold,
-  color: Colors.black,
+  color: Color(0xFF727272),
+
 );
 
 const kWelcomeScreensDescriptionText = TextStyle(
