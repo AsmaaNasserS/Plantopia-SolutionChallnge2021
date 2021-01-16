@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gp_app/view/ForgetPassword.dart';
-import 'package:gp_app/view/SignUp.dart';
-import '../const.dart';
+import '../../const.dart';
 import 'ForgetPassword.dart';
-import 'SignUp.dart';
 import 'SignUp.dart';
 
 class Login extends StatefulWidget {
@@ -68,6 +65,7 @@ class _LoginState extends State<Login> {
                 obscureText: true,
                 onSubmitted: (value) {
                   _passwordController.text = value;
+                 // print(_passwordController);
                 },
               ),
               SizedBox(height: mediaQuery.height * 0.01),
@@ -187,6 +185,7 @@ class _LoginState extends State<Login> {
                       InkWell(
                         onTap: () {
                           ///* done TODO  GO TO Sign up  */////
+                          ///TODO NSB IN CENTER AL LINE :"
                           Navigator.pushNamed(
                             context,
                             SignUp.id

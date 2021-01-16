@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gp_app/view/Login.dart';
-import 'package:gp_app/view/PasswordUpdated.dart';
-import '../const.dart';
+import '../../const.dart';
 import 'Login.dart';
 import 'PasswordUpdated.dart';
 

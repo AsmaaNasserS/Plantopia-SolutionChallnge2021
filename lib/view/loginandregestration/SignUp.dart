@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gp_app/view/Login.dart';
-import '../const.dart';
+import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/loginandregestration/Login.dart';
+import '../../const.dart';
 
 class SignUp extends StatefulWidget {
   static String id = "SignUp";
