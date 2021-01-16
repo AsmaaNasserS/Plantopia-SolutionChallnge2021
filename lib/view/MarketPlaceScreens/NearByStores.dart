@@ -14,6 +14,7 @@ class _nearByState extends State<nearBy> {
     final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        elevation: 15,
     backgroundColor: kCardColor,
           actions: <Widget>[
           IconButton(
@@ -34,7 +35,9 @@ class _nearByState extends State<nearBy> {
             child: Center(
               child: Column(
                 children: [
-                  MyStoreCard2(mediaQuery: mediaQuery),
+                  SizedBox(
+                    height: mediaQuery.height*0.03
+                  ),                  MyStoreCard2(mediaQuery: mediaQuery),
                   MyStoreCard2(mediaQuery: mediaQuery),
                   MyStoreCard2(mediaQuery: mediaQuery),
                   MyStoreCard2(mediaQuery: mediaQuery),

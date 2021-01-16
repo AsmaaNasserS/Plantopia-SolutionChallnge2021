@@ -113,8 +113,8 @@ import 'ProductDetails.dart';
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-class MyStoreCard1 extends StatelessWidget {
-  const MyStoreCard1({
+class MyStoreCard2 extends StatelessWidget {
+  const MyStoreCard2({
     Key key,
     @required this.mediaQuery,
   }) : super(key: key);
@@ -195,8 +195,8 @@ class MyStoreCard1 extends StatelessWidget {
 
 //////////////////////////////////////////// My store card
 
-class MyStoreCard2 extends StatelessWidget {
-  const MyStoreCard2({
+class MyStoreCard1 extends StatelessWidget {
+  const MyStoreCard1({
     Key key,
     @required this.mediaQuery,
   }) : super(key: key);
