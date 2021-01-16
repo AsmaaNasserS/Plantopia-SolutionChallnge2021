@@ -12,6 +12,12 @@ const kInActiveOrangeColor = Color(0xFFE3AA64);
 const kBottomFootbarContainerColour = Color(0xFFEBEBEB);
 const kButtonTextColour =  Color(0xFFF8F8F8);
 
+const kBackgroundColor = Color(0xFFF8F8F8); // the app background shades
+const kCardColor = Color(0xFFFFFFFF); // Market card and anysimilar compononet
+
+const kTextBoldColour = Color(0xFF6E6E6E); // for the titles in the screens
+const KTextLightColour = Color(0xFF727272); // subtitles and body text
+
 const klogInButtonTextStyle = TextStyle(
   fontSize:18.00,
   fontWeight: FontWeight.bold,
@@ -21,7 +27,7 @@ const klogInButtonTextStyle = TextStyle(
 const kWelcomeScreensTitleText = TextStyle(
   fontSize: 25.00,
   fontWeight: FontWeight.bold,
-  color: Color(0xFF727272),
+  color: Color(0xFF6E6E6E),
 
 );
 
@@ -31,3 +37,12 @@ const kWelcomeScreensDescriptionText = TextStyle(
   color: Colors.black,
   height: 1.5,
 );
+
+//used in markET
+const kBodyTextColour = TextStyle(
+  fontSize: 15.00,
+  fontWeight: FontWeight.bold,
+  color:Color(0xFF727272),
+  height: 1.5,
+);
+

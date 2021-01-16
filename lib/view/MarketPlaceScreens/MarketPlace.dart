@@ -1,17 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_app/const.dart';
+import 'MyStore.dart';
+import 'NearByStores.dart';
 
-class marketPlace extends StatefulWidget {
+class MarketPlace extends StatefulWidget {
   static String id = "marketPlace";
   @override
-  _marketPlaceState createState() => _marketPlaceState();
+  _MarketPlaceState createState() => _MarketPlaceState();
 }
 
-class _marketPlaceState extends State<marketPlace> {
+class _MarketPlaceState extends State<MarketPlace> {
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context).size;
     return DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -60,8 +61,8 @@ class _marketPlaceState extends State<marketPlace> {
           ),
           body: TabBarView(
             children: [
-              Center(child: Text("Page 1")),
-              Center(child: Text("Page 2")),
+              Center(child: nearBy(),),
+              Center(child: myStore()),
             ],
           ),
         ));
