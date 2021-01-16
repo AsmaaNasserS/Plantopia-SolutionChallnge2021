@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gp_app/view/Login.dart';
-import 'package:gp_app/view/ResetPassword.dart';
-import '../const.dart';
+import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/Login.dart';
+import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/ResetPassword.dart';
+import '../../const.dart';
 
 class ForgetPassword extends StatefulWidget {
   static String id = "ForgetPassword";

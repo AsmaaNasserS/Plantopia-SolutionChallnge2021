@@ -1,7 +1,7 @@
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_app/const.dart';
-import 'package:gp_app/view/Login.dart';
+import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/Login.dart';
 
 class ConstWelcomeScreen extends StatelessWidget {
   static String id = 'const_welcome_screen';

@@ -1,11 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:gp_app/view/ForgetPassword.dart';
+import 'package:gp_app/view/EditProfile.dart';
+import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/ForgetPassword.dart';
 import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
-import 'package:gp_app/view/PasswordUpdated.dart';
-import 'package:gp_app/view/ResetPassword.dart';
-import 'package:gp_app/view/SignUp.dart';
-import 'view/Login.dart';
+import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/PasswordUpdated.dart';
+import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/ResetPassword.dart';
+import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/SignUp.dart';
+import 'view/login_regestration/Login.dart';
 import 'package:gp_app/view/onboardingScreens/WelcomeScreen1.dart';
 import 'package:gp_app/view/onboardingScreens/ConstWelcomeScreens.dart';
 import 'package:gp_app/view/MarketPlaceScreens/ProductDetails.dart';
@@ -20,10 +21,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MarketPlace(), // write the namr of your page to rin it immediatly , to run the whole app uncomment the following
+      home: EditProfile(), // write the namr of your page to rin it immediatly , to run the whole app uncomment the following
     //   initialRoute: WelcomeScreen1.id,
     //   routes: {
+    //
     //     WelcomeScreen1.id:(context)=> WelcomeScreen1(),
+    //     EditProfile.id:(context)=> EditProfile(),
     //     ConstWelcomeScreen.id:(context)=>ConstWelcomeScreen(),
     //     SignUp.id: (context) => SignUp(),
     //     Login.id: (context) => Login(),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gp_app/view/Login.dart';
-import '../const.dart';
+import '../../const.dart';
 import 'Login.dart';
 
 class PasswordUpdated extends StatefulWidget {
