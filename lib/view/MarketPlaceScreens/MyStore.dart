@@ -20,11 +20,11 @@ class _myStoreState extends State<myStore> {
       child: Center(
         child: Column(
           children: [
-            MyStoreCard(mediaQuery: mediaQuery),
-            MyStoreCard(mediaQuery: mediaQuery),
-            MyStoreCard(mediaQuery: mediaQuery),
-            MyStoreCard(mediaQuery: mediaQuery),
-            MyStoreCard(mediaQuery: mediaQuery),
+            MyStoreCard1(mediaQuery: mediaQuery),
+            MyStoreCard1(mediaQuery: mediaQuery),
+            MyStoreCard1(mediaQuery: mediaQuery),
+            MyStoreCard1(mediaQuery: mediaQuery),
+            MyStoreCard1(mediaQuery: mediaQuery),
           ],
         ),
       ),

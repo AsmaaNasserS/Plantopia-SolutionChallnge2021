@@ -46,3 +46,10 @@ const kBodyTextColour = TextStyle(
   height: 1.5,
 );
 
+const kLightText = TextStyle(
+  fontSize: 15.00,
+  fontWeight: FontWeight.bold,
+  color:Color(0xFFDCDCDC),
+  height: 1.5,
+);
+

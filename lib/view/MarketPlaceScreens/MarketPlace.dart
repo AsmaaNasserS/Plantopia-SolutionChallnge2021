@@ -59,6 +59,7 @@ class _MarketPlaceState extends State<MarketPlace> {
               ),
             ),
           ),
+
           body: TabBarView(
             children: [
               Center(child: nearBy(),),

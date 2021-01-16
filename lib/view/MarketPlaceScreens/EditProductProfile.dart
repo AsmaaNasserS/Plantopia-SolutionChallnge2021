@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gp_app/const.dart';
 
 
-class ProductDetails extends StatelessWidget {
-  static String id = "ProductDetails";
+class EditProductProfile extends StatelessWidget {
+  static String id = "EditProductProfile";
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class ProductDetails extends StatelessWidget {
       backgroundColor: kBackgroundColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor:  kInActiveBackButtonColor,
+        backgroundColor: kInActiveBackButtonColor,
         title: Center(
           child: Text(
             'Product Details ',
@@ -41,17 +41,17 @@ class ProductDetails extends StatelessWidget {
               title: Text(
                 'Sun Flower Seeds',
                 style: kWelcomeScreensTitleText,
-                ),
+              ),
               subtitle: Text(
                 'Seller Name  ',
                 style: kBodyTextColour,
-                ),
               ),
+            ),
             ListTile(
               title: Text(
-                'Details',
-                style: kWelcomeScreensTitleText
-                ),
+                  'Details',
+                  style: kWelcomeScreensTitleText
+              ),
               subtitle: Text(
                 'This is seeds for the plant sunflower, you can have you plant   ',
                 style: kBodyTextColour,
@@ -63,17 +63,17 @@ class ProductDetails extends StatelessWidget {
 
 
       ),
-       bottomNavigationBar:
-        FlatButton(
-          height:mediaQuery.height*0.1,
-          color: kInActivelogInButtonColor,
-          onPressed: () {
-          },
-          child: Text(
-            'Call The Seller ',
-            style: klogInButtonTextStyle,
-          ),
+      bottomNavigationBar:
+      FlatButton(
+        height:mediaQuery.height*0.1,
+        color: kInActivelogInButtonColor,
+        onPressed: () {
+        },
+        child: Text(
+          'Save and Publish ',
+          style: klogInButtonTextStyle,
         ),
-      );
+      ),
+    );
   }
 }
