@@ -62,8 +62,8 @@ class _MarketPlaceState extends State<MarketPlace> {
 
           body: TabBarView(
             children: [
-              Center(child: nearBy(),),
-              Center(child: myStore()),
+              Center(child: NearBy(),),
+              Center(child: MyStore()),
             ],
           ),
         ));

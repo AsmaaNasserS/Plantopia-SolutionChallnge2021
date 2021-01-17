@@ -18,7 +18,7 @@ class _EditProfileState extends State<EditProfile> {
   final _changedTitle= TextEditingController();
   final _changedPassword= TextEditingController();
   Future<void>  _changename(TextEditingController name ,TextEditingController newName) async{
-    bool change = false;
+   // bool change = false;
     showDialog(context: context, builder: (BuildContext context) {
       final mediaQuery = MediaQuery.of(context).size;
       return Center(
@@ -77,7 +77,7 @@ class _EditProfileState extends State<EditProfile> {
                         child: GestureDetector(
 
                           onTap: ()=> {
-                            change = true,
+                            //change = true,
                             Navigator.of(context).pop(context),
                             ///* TODO change profile  PAGE *//*///
 

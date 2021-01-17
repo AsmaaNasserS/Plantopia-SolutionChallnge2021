@@ -1,16 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_app/view/EditProfile.dart';
-import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/ForgetPassword.dart';
-import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
-import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/PasswordUpdated.dart';
-import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/ResetPassword.dart';
-import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/SignUp.dart';
-import 'view/login_regestration/Login.dart';
-import 'package:gp_app/view/onboardingScreens/WelcomeScreen1.dart';
-import 'package:gp_app/view/onboardingScreens/ConstWelcomeScreens.dart';
-import 'package:gp_app/view/MarketPlaceScreens/ProductDetails.dart';
-
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

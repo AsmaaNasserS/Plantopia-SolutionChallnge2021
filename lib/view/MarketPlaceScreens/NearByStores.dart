@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gp_app/const.dart';
 import 'MarketPlaceComponents.dart';
-class nearBy extends StatefulWidget {
+class NearBy extends StatefulWidget {
   @override
-  _nearByState createState() => _nearByState();
+  _NearByState createState() => _NearByState();
 }
 
-class _nearByState extends State<nearBy> {
+class _NearByState extends State<NearBy> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;

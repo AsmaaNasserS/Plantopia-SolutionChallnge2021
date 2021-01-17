@@ -4,12 +4,12 @@ import 'package:flutter/widgets.dart';
 import 'package:gp_app/const.dart';
 import 'MarketPlaceComponents.dart';
 
-class myStore extends StatefulWidget {
+class MyStore extends StatefulWidget {
   @override
-  _myStoreState createState() => _myStoreState();
+  _MyStoreState createState() => _MyStoreState();
 }
 
-class _myStoreState extends State<myStore> {
+class _MyStoreState extends State<MyStore> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;

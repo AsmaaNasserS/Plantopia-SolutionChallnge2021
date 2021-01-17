@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../const.dart';
 import 'ForgetPassword.dart';
 import 'SignUp.dart';
-import 'SignUp.dart';
+
 
 class Login extends StatefulWidget {
   static String id = "Login";
