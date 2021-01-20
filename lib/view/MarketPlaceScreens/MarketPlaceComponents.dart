@@ -167,20 +167,29 @@ class MyStoreCard2 extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  color: kInActivelogInButtonColor,
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ProductDetails(),
-                    ));
-                  },
-                  child: Text(
-                    'View Details',
-                    style: klogInButtonTextStyle,
+                Text('30LE', style: kBodyTextColour, textAlign: TextAlign.left ,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 130),
+                  child:
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      color: kInActivelogInButtonColor,
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ProductDetails(),
+                        ));
+                      },
+                      child: Text(
+                        'View Details',
+                        style: klogInButtonTextStyle,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -249,20 +258,30 @@ class MyStoreCard1 extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  color: kInActivelogInButtonColor,
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => EditProductProfile(),
-                        ));
-                  },
-                  child: Text(
-                    'View Details',
-                    style: klogInButtonTextStyle,
+                Padding(
+                  padding: const EdgeInsets.only(right: 115),
+                  child: Text('30LE', style: kBodyTextColour, textAlign: TextAlign.left ,),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    color: kInActivelogInButtonColor,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => EditProductProfile(),
+                          ));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'View Details',
+                        style: klogInButtonTextStyle,
+                      ),
+                    ),
                   ),
                 ),
               ],

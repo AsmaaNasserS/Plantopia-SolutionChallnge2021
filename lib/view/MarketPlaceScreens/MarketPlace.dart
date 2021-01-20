@@ -19,8 +19,9 @@ class _MarketPlaceState extends State<MarketPlace> {
           appBar: AppBar(
             backgroundColor: kActiveBackButtonColor,
             bottom: TabBar(
-              unselectedLabelColor: kInActiveOrangeColor, // the text colour when it is not chosen
-              indicatorSize: TabBarIndicatorSize.label,
+              unselectedLabelColor:
+                  kInActiveOrangeColor, // the text colour when it is not chosen
+            indicatorSize: TabBarIndicatorSize.label,
               //BoxDecpration is used  to have the circuler shape around the words
               indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
@@ -29,9 +30,9 @@ class _MarketPlaceState extends State<MarketPlace> {
                 Tab(
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius : BorderRadius.circular(49) ,
-                        border: Border.all(color: kInActiveOrangeColor, width: 1)
-                    ),
+                        borderRadius: BorderRadius.circular(49),
+                        border:
+                            Border.all(color: kInActiveOrangeColor, width: 1)),
                     child: Align(
                       alignment: Alignment.center,
                       child: Text("Near By"),
@@ -41,9 +42,9 @@ class _MarketPlaceState extends State<MarketPlace> {
                 Tab(
                   child: Container(
                     decoration: BoxDecoration(
-                        borderRadius : BorderRadius.circular(49) ,
-                        border: Border.all(color: kInActiveOrangeColor, width: 1)
-                    ),
+                        borderRadius: BorderRadius.circular(49),
+                        border:
+                            Border.all(color: kInActiveOrangeColor, width: 1)),
                     child: Align(
                       alignment: Alignment.center,
                       child: Text("My store"),
@@ -59,15 +60,16 @@ class _MarketPlaceState extends State<MarketPlace> {
               ),
             ),
           ),
-
           body: TabBarView(
             children: [
-              Center(child: NearBy(),),
-              Center(child: MyStore()),
+              Center(
+                child: NearBy(),
+              ),
+              Center(
+                child: MyStore(),
+              ),
             ],
           ),
         ));
-
-
   }
 }

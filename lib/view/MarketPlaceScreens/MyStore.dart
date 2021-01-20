@@ -14,21 +14,26 @@ class _MyStoreState extends State<MyStore> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
     return SingleChildScrollView(
-        child: Container(
+        child: Padding(
+
+          padding: EdgeInsets.only(top: mediaQuery.height *0.03) , // we added pading o change appbar place
+
+          child: Container(
       width: mediaQuery.width * 1,
       color: kBackgroundColor,
       child: Center(
-        child: Column(
-          children: [
-            MyStoreCard1(mediaQuery: mediaQuery),
-            MyStoreCard1(mediaQuery: mediaQuery),
-            MyStoreCard1(mediaQuery: mediaQuery),
-            MyStoreCard1(mediaQuery: mediaQuery),
-            MyStoreCard1(mediaQuery: mediaQuery),
-          ],
-        ),
+          child: Column(
+            children: [
+              MyStoreCard1(mediaQuery: mediaQuery),
+              MyStoreCard1(mediaQuery: mediaQuery),
+              MyStoreCard1(mediaQuery: mediaQuery),
+              MyStoreCard1(mediaQuery: mediaQuery),
+              MyStoreCard1(mediaQuery: mediaQuery),
+            ],
+          ),
       ),
-    ));
+    ),
+        ));
   }
 }
 
