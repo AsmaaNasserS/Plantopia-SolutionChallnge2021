@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/Login.dart';
-import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/ResetPassword.dart';
+//import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/Login.dart';
+import 'package:gp_app/view/login_regestration/Login.dart';
+//import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/ResetPassword.dart';
+import 'package:gp_app/view/login_regestration/ResetPassword.dart';
 import '../../const.dart';
 
 class ForgetPassword extends StatefulWidget {

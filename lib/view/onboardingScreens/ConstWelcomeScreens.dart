@@ -1,7 +1,7 @@
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_app/const.dart';
-import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/Login.dart';
+import 'package:gp_app/view/login_regestration/Login.dart';
 
 class ConstWelcomeScreen extends StatelessWidget {
   static String id = 'const_welcome_screen';
@@ -43,7 +43,6 @@ class ConstWelcomeScreen extends StatelessWidget {
         " You can personalize the app by adding the specific plants you have in your house it can help you track your garden\'s progress, and the app will notify you of their requirements.",
         decoration: pageDecoration,
       ),
-
     ];
   }
   @override

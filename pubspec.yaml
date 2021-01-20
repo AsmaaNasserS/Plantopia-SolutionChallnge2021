@@ -18,6 +18,8 @@ dependencies:
   cloud_firestore: ^0.16.0
   provider: ^4.3.2+3
   introduction_screen: ^1.0.9
+  material_design_icons_flutter: ^4.0.5855
+  image_picker: ^0.6.7+21
 
 dev_dependencies:
   font_awesome_flutter: ^8.11.0
