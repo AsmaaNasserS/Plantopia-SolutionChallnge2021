@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_app/view/EditProfile.dart';
-import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MarketPlace(), // write the namr of your page to rin it immediatly , to run the whole app uncomment the following
+      home: EditProfile(), // write the namr of your page to rin it immediatly , to run the whole app uncomment the following
     //   initialRoute: WelcomeScreen1.id,
     //   routes: {
     //

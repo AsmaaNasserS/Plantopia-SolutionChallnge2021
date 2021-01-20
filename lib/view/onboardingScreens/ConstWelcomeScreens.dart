@@ -44,7 +44,6 @@ class ConstWelcomeScreen extends StatelessWidget {
         " You can personalize the app by adding the specific plants you have in your house it can help you track your garden\'s progress, and the app will notify you of their requirements.",
         decoration: pageDecoration,
       ),
-
     ];
   }
   @override

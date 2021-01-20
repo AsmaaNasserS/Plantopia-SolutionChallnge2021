@@ -28,7 +28,6 @@ const kWelcomeScreensTitleText = TextStyle(
   fontSize: 25.00,
   fontWeight: FontWeight.bold,
   color: Color(0xFF6E6E6E),
-
 );
 
 const kWelcomeScreensDescriptionText = TextStyle(
@@ -36,6 +35,23 @@ const kWelcomeScreensDescriptionText = TextStyle(
   fontWeight: FontWeight.bold,
   color: Colors.black,
   height: 1.5,
+);
+
+const kTitleText = TextStyle(
+  fontSize: 18.00,
+  fontWeight: FontWeight.w500,
+  color: Color(0xFF6E6E6E),
+);
+
+const kTextDescription = TextStyle(
+  fontSize: 15.00,
+  color:Color(0xFF727272),
+  //height: 1.5,
+);
+
+const kCardTextDescription = TextStyle(
+  fontSize: 13.00,
+  color:Color(0xFF6E6E6E),
 );
 
 //used in markET
