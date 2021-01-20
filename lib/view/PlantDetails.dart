@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gp_app/const.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:gp_app/view/PlantDetailsComponent.dart';
 //import 'package:image_picker/image_picker.dart';
 //import 'dart:io';
 
@@ -91,56 +92,31 @@ class _PlantDetailsState extends State<PlantDetails> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(
-                        'Tasks (1)',
-                        style: kTitleText,
-                      ),
+                      TextOfTitle(textName:'Tasks (1)'),
                       SizedBox(height: mediaQuery.height * 0.01),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          FlatButton(
+                          RoundedIconButton(
+                            iconName: Icons.wb_sunny_outlined,
+                            iconColor: kInActivelogInButtonColor,
+                            colorBackground: kButtonTextColour,
+                            borderColor: kInActivelogInButtonColor ,
                             onPressed: () {},
-                            color: kButtonTextColour,
-                            minWidth: mediaQuery.width * 0.24,
-                            height: mediaQuery.height * 0.05,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                              side: BorderSide(
-                                  color: kInActivelogInButtonColor,
-                                  width: 2,
-                                  style: BorderStyle.solid),
-                            ),
-                            child: Icon(
-                              Icons.wb_sunny_outlined,
-                              color: kInActivelogInButtonColor,
-                              size: 30,
-                            ),
                           ),
-                          FlatButton(
+                          RoundedIconButton(
+                            iconName: MdiIcons.waterOutline,
+                            iconColor: kButtonTextColour,
+                            colorBackground: kInActivelogInButtonColor,
+                            borderColor: kInActivelogInButtonColor ,
                             onPressed: () {},
-                            color: kInActivelogInButtonColor,
-                            minWidth: mediaQuery.width * 0.24,
-                            height: mediaQuery.height * 0.05,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                            ),
-                            child: Icon(MdiIcons.waterOutline,
-                                color: kButtonTextColour, size: 30),
                           ),
-                          FlatButton(
+                          RoundedIconButton(
+                            iconName:MdiIcons.treeOutline,
+                            iconColor: kInActivelogInButtonColor,
+                            colorBackground: Colors.greenAccent[100],
+                            borderColor: Colors.greenAccent[100] ,
                             onPressed: () {},
-                            color: Colors.greenAccent[100],
-                            minWidth: mediaQuery.width * 0.24,
-                            height: mediaQuery.height * 0.05,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                            ),
-                            child: Icon(
-                              MdiIcons.treeOutline,
-                              color: kInActivelogInButtonColor,
-                              size: 30,
-                            ),
                           ),
                         ],
                       ),
@@ -151,36 +127,21 @@ class _PlantDetailsState extends State<PlantDetails> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              'Light',
-                              style: TextStyle(color: KTextLightColour),
-                            ),
-                            Text(
-                              'Water',
-                              style: TextStyle(color: KTextLightColour),
-                            ),
-                            Text(
-                              'Clean',
-                              style: TextStyle(color: KTextLightColour),
-                            ),
+                            TextOfIconButton(textName: 'Light'),
+                            TextOfIconButton(textName: 'Water'),
+                            TextOfIconButton(textName: 'Clean'),
                           ],
                         ),
                       ),
                       SizedBox(height: mediaQuery.height * 0.02),
-                      Text(
-                        'Plants Information',
-                        style: kTitleText,
-                      ),
+                      TextOfTitle(textName:'Plants Information'),
                       SizedBox(height: mediaQuery.height * 0.01),
                       Text(
                         'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.',
                         style: kTextDescription,
                       ),
                       SizedBox(height: mediaQuery.height * 0.02),
-                      Text(
-                        'Usage & Features',
-                        style: kTitleText,
-                      ),
+                      TextOfTitle(textName:'Usage & Features'),
                       SizedBox(height: mediaQuery.height * 0.01),
                       Container(
                         padding: EdgeInsets.all(mediaQuery.width * 0.02),
@@ -222,100 +183,24 @@ class _PlantDetailsState extends State<PlantDetails> {
                         ),
                       ),
                       SizedBox(height: mediaQuery.height * 0.01),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: mediaQuery.width * 0.28,
-                            height: mediaQuery.height * 0.15,
-                            padding: EdgeInsets.all(mediaQuery.width * 0.02),
-                            decoration: BoxDecoration(
-                              color: kCardColor,
-                              border: Border.all(color: kActiveBackButtonColor),
-                              borderRadius: BorderRadius.circular(30.0),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.10),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: Offset(
-                                      0, 3), // changes position of shadow
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.wb_sunny_outlined,
-                                  color: kActiveOrangeColor,
-                                  size: 30,
-                                ),
-                                Text('indoor: Medium',
-                                    style: kCardTextDescription),
-                                Text('outside: Part Of Shade',
-                                    style: kCardTextDescription),
-                              ],
-                            ),
+                          ReusableCard(
+                            iconName:Icons.wb_sunny_outlined,
+                            iconColor: kActiveOrangeColor,
+                            text: 'indoor: Medium \n outside: Part Of Shade',
                           ),
-                          Container(
-                            width: mediaQuery.width * 0.28,
-                            height: mediaQuery.height * 0.15,
-                            padding: EdgeInsets.all(mediaQuery.width * 0.02),
-                            decoration: BoxDecoration(
-                              color: kCardColor,
-                              border: Border.all(color: kActiveBackButtonColor),
-                              borderRadius: BorderRadius.circular(30.0),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.10),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: Offset(
-                                      0, 3), // changes position of shadow
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  MdiIcons.waterOutline,
-                                  color: Colors.lightBlue,
-                                  size: 30,
-                                ),
-                                Text('Medium Water',
-                                    style: kCardTextDescription),
-                              ],
-                            ),
+                          ReusableCard(
+                            iconName: MdiIcons.waterOutline,
+                            iconColor: Colors.lightBlue,
+                            text: 'Medium Water',
                           ),
-                          Container(
-                            width: mediaQuery.width * 0.28,
-                            height: mediaQuery.height * 0.15,
-                            padding: EdgeInsets.all(mediaQuery.width * 0.02),
-                            decoration: BoxDecoration(
-                              color: kCardColor,
-                              border: Border.all(color: kActiveBackButtonColor),
-                              borderRadius: BorderRadius.circular(30.0),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.10),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: Offset(
-                                      0, 3), // changes position of shadow
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  MdiIcons.waterOutline,
-                                  color: Colors.deepPurple,
-                                  size: 30,
-                                ),
-                                Text('40% Humidity',
-                                    style: kCardTextDescription),
-                              ],
-                            ),
+                          ReusableCard(
+                            iconName: MdiIcons.waterOutline,
+                            iconColor: Colors.deepPurple,
+                            text: '40% Humidity',
                           ),
                         ],
                       ),
