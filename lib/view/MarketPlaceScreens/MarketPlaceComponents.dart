@@ -278,7 +278,7 @@ class MyStoreCard1 extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'View Details',
+                        'Edit Product',
                         style: klogInButtonTextStyle,
                       ),
                     ),
