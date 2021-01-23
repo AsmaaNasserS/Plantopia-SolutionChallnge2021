@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gp_app/const.dart';
 import 'package:gp_app/view/EditProfile.dart';
 import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
+import 'package:gp_app/view/expert/ExpertsList.dart';
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.green, // Your app THeme color , used to change drawer colour
       ),
-      home: MarketPlace(), // write the namr of your page to rin it immediatly , to run the whole app uncomment the following
+      home: ExpertsList(),
+      //home: MarketPlace(), // write the namr of your page to rin it immediatly , to run the whole app uncomment the following
     //   initialRoute: WelcomeScreen1.id,
     //   routes: {
     //

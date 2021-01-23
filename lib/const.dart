@@ -62,6 +62,7 @@ const kBodyTextColour = TextStyle(
   height: 1.5,
 );
 
+
 const kLightText = TextStyle(
   fontSize: 15.00,
   fontWeight: FontWeight.bold,
@@ -69,3 +70,8 @@ const kLightText = TextStyle(
   height: 1.5,
 );
 
+const kExpertsDescriptionTexts = TextStyle(
+  fontSize: 15.00,
+  fontWeight: FontWeight.normal,
+  color: Colors.black,
+);
