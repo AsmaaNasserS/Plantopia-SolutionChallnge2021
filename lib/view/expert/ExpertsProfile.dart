@@ -6,8 +6,10 @@ import 'package:table_calendar/table_calendar.dart';
 import '../../const.dart';
 import 'ArticlesPage.dart';
 import 'ExpertCard.dart';
-import 'file:///C:/Users/Lenovo/AndroidStudioProjects/Graduation-Project/lib/view/expert/Articles.dart';
-import 'file:///C:/Users/Lenovo/AndroidStudioProjects/Graduation-Project/lib/view/expert/ArticlesCard.dart';
+import 'package:gp_app/view/expert/ArticlesCard.dart';
+import 'package:gp_app/view/expert/Articles.dart';
+//import 'file:///C:/Users/Lenovo/AndroidStudioProjects/Graduation-Project/lib/view/expert/Articles.dart';
+//import 'file:///C:/Users/Lenovo/AndroidStudioProjects/Graduation-Project/lib/view/expert/ArticlesCard.dart';
 
 
 class ExpertsProfile extends StatefulWidget {

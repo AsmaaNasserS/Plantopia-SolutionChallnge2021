@@ -49,7 +49,7 @@ class _PlantDetailsState extends State<PlantDetails> {
         automaticallyImplyLeading: false,
         backgroundColor: kActiveBackButtonColor,
         title: Text(
-          'Spanish',
+          'Spinach',
           style: kWelcomeScreensTitleText,
         ),
         toolbarHeight: mediaQuery.height * 0.09,
@@ -69,10 +69,37 @@ class _PlantDetailsState extends State<PlantDetails> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Image.asset(
-                  'images/spinach.jpg',
-                  fit: BoxFit.fitWidth,
+                Container(
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: FlatButton(
+                      child: Container(
+                        height: mediaQuery.height * 0.06,
+                        width: mediaQuery.width * 0.45,
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.edit,
+                              color: kButtonTextColour,
+                            ),
+                            Text('Edit Product Photo',
+                              style:klogInButtonTextStyle ,
+                            ),
+                          ],
+                        ),
+                      ),
+                      onPressed:(){} ,
+                    ),
+                  ),
                   height: mediaQuery.height * 0.25,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'images/spinach.jpg',
+                      ),
+                      fit: BoxFit.fitWidth,
+                    ),
+                  ),
                 ),
 
                 //showImage(),
@@ -87,7 +114,7 @@ class _PlantDetailsState extends State<PlantDetails> {
                 Padding(
                   //padding: const EdgeInsets.all(15.0),
                   padding: EdgeInsets.symmetric(
-                      vertical: mediaQuery.height * 0.01,
+                      vertical: mediaQuery.height * 0.02,
                       horizontal: mediaQuery.width * 0.06),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -133,14 +160,14 @@ class _PlantDetailsState extends State<PlantDetails> {
                           ],
                         ),
                       ),
-                      SizedBox(height: mediaQuery.height * 0.02),
+                      SizedBox(height: mediaQuery.height * 0.03),
                       TextOfTitle(textName:'Plants Information'),
                       SizedBox(height: mediaQuery.height * 0.01),
                       Text(
                         'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.',
                         style: kTextDescription,
                       ),
-                      SizedBox(height: mediaQuery.height * 0.02),
+                      SizedBox(height: mediaQuery.height * 0.03),
                       TextOfTitle(textName:'Usage & Features'),
                       SizedBox(height: mediaQuery.height * 0.01),
                       Container(
@@ -172,6 +199,7 @@ class _PlantDetailsState extends State<PlantDetails> {
                               ),
                             ),
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text('it purify air and easy to grow',
                                     style: kTextDescription),
@@ -183,7 +211,6 @@ class _PlantDetailsState extends State<PlantDetails> {
                         ),
                       ),
                       SizedBox(height: mediaQuery.height * 0.01),
-
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -204,6 +231,22 @@ class _PlantDetailsState extends State<PlantDetails> {
                           ),
                         ],
                       ),
+                      SizedBox(height: mediaQuery.height * 0.03),
+                      TextOfTitle(textName:'Care Options'),
+                      SizedBox(height: mediaQuery.height * 0.01),
+                      SwitchRow(
+                        iconName: MdiIcons.water,
+                        iconColor: kInActivelogInButtonColor,
+                        name: 'Water',
+                        description: '7 Day repeat | Morning',
+                      ),
+                      SizedBox(height: mediaQuery.height * 0.01),
+                      SwitchRow(
+                        iconName: MdiIcons.palmTree,
+                        iconColor: kTextBoldColour,
+                        name: 'Fertilize',
+                        description: 'Not Set',
+                      ),
                       SizedBox(height: mediaQuery.height * 0.06),
                       FlatButton(
                         onPressed: () {},
@@ -214,7 +257,7 @@ class _PlantDetailsState extends State<PlantDetails> {
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                         child:
-                            Text('Set Reminder', style: klogInButtonTextStyle),
+                            Text('Set Reminder', style: kBottomButtonTextStyle),
                       ),
                     ],
                   ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gp_app/const.dart';
-//import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
+import 'package:custom_switch/custom_switch.dart';
 
 class RoundedIconButton extends StatelessWidget {
   final IconData iconName;
@@ -9,10 +8,7 @@ class RoundedIconButton extends StatelessWidget {
   final Color colorBackground ;
   final Color iconColor;
   final Color borderColor;
-  //final BorderSide borderSide;
-
   RoundedIconButton({@required this.iconName, this.onPressed , this.colorBackground , this.iconColor, this.borderColor});
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
@@ -51,6 +47,7 @@ class TextOfIconButton extends StatelessWidget {
     );
   }
 }
+
 class TextOfTitle extends StatelessWidget {
   final String textName;
   TextOfTitle({this.textName});
@@ -68,7 +65,6 @@ class ReusableCard extends StatelessWidget {
   final IconData iconName ;
   final Color iconColor;
   final String text ;
-  //final String text2;
   ReusableCard({this.iconName,this.iconColor , this.text });
 
   @override
@@ -102,11 +98,69 @@ class ReusableCard extends StatelessWidget {
           ),
           Text(text,
               style: kCardTextDescription),
-          // Text(text1,
-          //     style: kCardTextDescription),
         ],
       ),
     );
   }
 }
 
+class SwitchRow extends StatefulWidget {
+  final IconData iconName ;
+  final Color iconColor;
+  final String name ;
+  final String description ;
+  SwitchRow({this.iconName,this.iconColor ,this.name, this.description,});
+
+  @override
+  _SwitchRowState createState() => _SwitchRowState(iconName: iconName,iconColor: iconColor,description: description,name: name
+  );
+}
+class _SwitchRowState extends State<SwitchRow> {
+  final IconData iconName ;
+  final Color iconColor;
+  final String name ;
+  final String description ;
+  _SwitchRowState({this.iconName,this.iconColor ,this.name, this.description});
+
+  // String waterTrue ='7 Day repeat | Morning';
+  // String fertilizeTrue ='1 Day repeat | Week';
+  // String waterOrFertilizeFalse='Not Set';
+  @override
+  Widget build(BuildContext context) {
+    bool status = false;
+    final mediaQuery = MediaQuery.of(context).size;
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Icon(iconName,
+            color: iconColor,
+            size: 30),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Container(
+            height: mediaQuery.height * 0.05,
+            width: mediaQuery.width * 0.45,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(name,style: kTextDescription),
+                Text(description,style: kTextDescription),
+              ],
+            ),
+          ),
+        ),
+        CustomSwitch(
+          activeColor: kInActivelogInButtonColor,
+          value: status,
+          onChanged: (value) {
+            //print("VALUE : $value");
+            setState(() {
+              status = value;
+            });
+          },
+        ),
+      ],
+    );
+  }
+}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../const.dart';
-import 'file:///C:/Users/Lenovo/AndroidStudioProjects/Graduation-Project/lib/view/expert/ArticlesCard.dart';
-
+//import 'file:///C:/Users/Lenovo/AndroidStudioProjects/Graduation-Project/lib/view/expert/ArticlesCard.dart';
+import 'package:gp_app/view/expert/ArticlesCard.dart';
 
 class ArticlesPage extends StatelessWidget {
 

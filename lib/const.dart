@@ -24,6 +24,11 @@ const klogInButtonTextStyle = TextStyle(
   color : Color(0xFFF8F8F8), // text of button color
 );
 
+const kBottomButtonTextStyle = TextStyle(
+  fontSize:20.00,
+  fontWeight: FontWeight.bold,
+  color : Color(0xFFF8F8F8), // text of button color
+);
 const kWelcomeScreensTitleText = TextStyle(
   fontSize: 25.00,
   fontWeight: FontWeight.bold,
