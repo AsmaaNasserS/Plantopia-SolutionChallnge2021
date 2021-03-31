@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      //resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 25.0),

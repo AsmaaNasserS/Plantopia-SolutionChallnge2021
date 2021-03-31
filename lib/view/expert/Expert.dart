@@ -1,7 +1,5 @@
 
 
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 
 class Expert
@@ -15,6 +13,10 @@ class Expert
   Widget text;
 
   Expert({@required this.ExpertImage ,@required this.name,this.title,this.bio,this.languages,this.price , this.text});
+
+
+
+
 
 }
 

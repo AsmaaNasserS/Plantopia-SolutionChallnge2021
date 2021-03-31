@@ -385,7 +385,7 @@ class _EditProfileState extends State<EditProfile> {
     _title.text ="hello";
     _password.text ="hello";
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      //resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
 
         padding: EdgeInsets.symmetric(vertical:30),

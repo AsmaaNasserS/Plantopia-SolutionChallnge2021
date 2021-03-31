@@ -14,7 +14,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      //resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 25.0),

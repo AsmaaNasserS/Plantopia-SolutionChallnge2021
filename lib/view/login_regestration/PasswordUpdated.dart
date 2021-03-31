@@ -14,7 +14,7 @@ class _PasswordUpdatedState extends State<PasswordUpdated>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      //resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 25.0),
