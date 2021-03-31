@@ -1,10 +1,8 @@
-
-
 import 'package:flutter/cupertino.dart';
 
 class Expert
 {
-  String ExpertImage;
+  String expertImage;
   String name;
   String title;
   String bio;
@@ -12,7 +10,7 @@ class Expert
   double price;
   Widget text;
 
-  Expert({@required this.ExpertImage ,@required this.name,this.title,this.bio,this.languages,this.price , this.text});
+  Expert({@required this.expertImage ,@required this.name,this.title,this.bio,this.languages,this.price , this.text});
 
 
 
@@ -51,7 +49,7 @@ class Expert
 
 List<Expert> experts=[
   Expert(
-      ExpertImage: 'images/expert1.png',
+      expertImage: 'images/expert1.png',
       name: 'Menna Sayed',
       title: 'botanist',
       bio: "Caroline mixes a passion for both education and plants into her day to dayShe spent six years in higher"
@@ -61,7 +59,7 @@ List<Expert> experts=[
       price: 20.00
   ),
   Expert(
-      ExpertImage: 'images/expert2.png',
+      expertImage: 'images/expert2.png',
       name: 'Mayan Mohamed',
       title: 'botanist',
       bio: "Caroline mixes a passion for both education and plants into her day to dayShe spent six years in higher"
@@ -71,7 +69,7 @@ List<Expert> experts=[
       price: 20.00
   ),
   Expert(
-      ExpertImage: 'images/expert3.png',
+      expertImage: 'images/expert3.png',
       name: 'Maryam emad',
       title: 'botanist',
       bio: "Caroline mixes a passion for both education and plants into her day to dayShe spent six years in higher"
@@ -81,7 +79,7 @@ List<Expert> experts=[
       price: 20.00
   ),
   Expert(
-      ExpertImage: 'images/expert4.png',
+      expertImage: 'images/expert4.png',
       name: 'Mayar El awady',
       title: 'botanist',
       bio: "Caroline mixes a passion for both education and plants into her day to dayShe spent six years in higher"
@@ -91,7 +89,7 @@ List<Expert> experts=[
       price: 20.00
   ),
   Expert(
-      ExpertImage: 'images/expert5.png',
+      expertImage: 'images/expert5.png',
       name: 'Asmaa',
       title: 'botanist',
       bio: "Caroline mixes a passion for both education and plants into her day to dayShe spent six years in higher"
@@ -101,7 +99,7 @@ List<Expert> experts=[
       price: 20.00
   ),
   Expert(
-      ExpertImage: 'images/expert6.png',
+      expertImage: 'images/expert6.png',
       name: 'Nehal',
       title: 'botanist',
       bio: "Caroline mixes a passion for both education and plants into her day to dayShe spent six years in higher"
@@ -111,7 +109,7 @@ List<Expert> experts=[
       price: 20.00
   ),
   Expert(
-      ExpertImage: 'images/expert7.png',
+      expertImage: 'images/expert7.png',
       name: 'John',
       title: 'botanist',
       bio: "Caroline mixes a passion for both education and plants into her day to dayShe spent six years in higher"
@@ -121,7 +119,7 @@ List<Expert> experts=[
       price: 20.00
   ),
   Expert(
-    ExpertImage: 'images/expert8.png',
+    expertImage: 'images/expert8.png',
     name: 'Mark',
     title: 'botanist',
     bio: "Caroline mixes a passion for both education and plants into her day to dayShe spent six years in higher"
