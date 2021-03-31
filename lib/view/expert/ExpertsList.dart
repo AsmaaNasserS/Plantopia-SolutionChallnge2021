@@ -48,7 +48,7 @@ _ExpertsListState({this.ExpertImage ,this.name , this.title , this.bio , this.la
           return ExpertCard(
                   details: Column(
                     children: [
-                      Image(image: AssetImage(experts[index].ExpertImage)),
+                      Image(image: AssetImage(experts[index].expertImage)),
                       SizedBox(height: 15,),
                       Text(experts[index].name , style: kExpertsDescriptionTexts,),
                     ],
@@ -57,7 +57,7 @@ _ExpertsListState({this.ExpertImage ,this.name , this.title , this.bio , this.la
                   onPress: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ExpertsProfile(ExpertImage:experts[index].ExpertImage,expertName:experts[index].name,expertTitle:experts[index].title,  expertBio:experts[index].bio,expertLanguages:experts[index].languages,expertPrice:experts[index].price),
+                      MaterialPageRoute(builder: (context) => ExpertsProfile(ExpertImage:experts[index].expertImage,expertName:experts[index].name,expertTitle:experts[index].title,  expertBio:experts[index].bio,expertLanguages:experts[index].languages,expertPrice:experts[index].price),
                     ));
                   },
           );
