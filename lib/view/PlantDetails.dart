@@ -10,7 +10,6 @@ class PlantDetails extends StatefulWidget {
   @override
   _PlantDetailsState createState() => _PlantDetailsState();
 }
-
 class _PlantDetailsState extends State<PlantDetails> {
   //Future<File> imageFile;
 
