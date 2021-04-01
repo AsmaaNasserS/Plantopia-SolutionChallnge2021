@@ -26,6 +26,7 @@ For help getting started with Flutter, view documentation     -https://flutter.d
 
 # Installation
 just clone the project
+get all dependances and run the project
 
 # Roadmap 
 
