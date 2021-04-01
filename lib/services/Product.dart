@@ -1,4 +1,3 @@
-import 'dart:html';
 
 class Products {
 
@@ -6,7 +5,7 @@ class Products {
   String productID;
   String description;
   int price;
-  Url photo;
+  String photo;
 
   Products({this.productName, this.productID, this.description, this.price,
       this.photo});

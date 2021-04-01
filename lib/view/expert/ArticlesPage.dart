@@ -5,11 +5,11 @@ import 'package:gp_app/view/expert/ArticlesCard.dart';
 
 class ArticlesPage extends StatelessWidget {
 
-  var ArticleTitle;
-  var ArticleImage;
-  var ArticleDescription;
+  var articleTitle;
+  var articleImage;
+  var articleDescription;
 
-  ArticlesPage({this.ArticleDescription , this.ArticleTitle , this.ArticleImage});
+  ArticlesPage({this.articleDescription , this.articleTitle , this.articleImage});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,11 @@ class ArticlesPage extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    Image(image: AssetImage(ArticleImage)),
+                    Image(image: AssetImage(articleImage)),
                     SizedBox(height: 20,),
-                    Text(ArticleTitle , style: kWelcomeScreensTitleText,),
+                    Text(articleTitle , style: kWelcomeScreensTitleText,),
                     SizedBox(height: 20,),
-                    Text(ArticleDescription , style: kExpertsDescriptionTexts,)
+                    Text(articleDescription , style: kExpertsDescriptionTexts,)
                   ],
                 ),
               ),

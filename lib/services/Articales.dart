@@ -1,8 +1,8 @@
-import 'dart:html';
+
 
 class  Articles {
 
-  Url photo;
+  String photo;
   String description;
   String expertID;
 

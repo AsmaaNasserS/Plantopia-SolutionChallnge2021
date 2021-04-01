@@ -1,14 +1,13 @@
-import 'dart:html';
 
 class User{
 
-   String  userName;
+  String  userName;
   String   title;
   String   email;
   String   password;
   int      role;
   String      userID;
-  Url      photo;
+  String      photo;
   List<User> users;
 
   User({this.userName, this.title, this.email, this.password, this.role,

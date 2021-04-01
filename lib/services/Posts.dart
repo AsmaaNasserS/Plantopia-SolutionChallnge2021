@@ -1,8 +1,8 @@
-import 'dart:html';
+
 
 class Posts{
 
-  Url photo;
+  String photo;
   String description;
   String userID;
   String postID;

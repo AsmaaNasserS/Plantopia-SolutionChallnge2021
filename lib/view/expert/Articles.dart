@@ -1,16 +1,16 @@
 class Article {
-  String ArticleImage;
+  String articleImage;
   String description;
   String title;
   String owner;
 
-  Article({this.ArticleImage , this.description,this.title,this.owner });
+  Article({this.articleImage , this.description,this.title,this.owner });
 
 }
 
 List<Article> articles=[
   Article(
-      ArticleImage : 'images/houseplants.jpg',
+      articleImage : 'images/houseplants.jpg',
       description: 'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
@@ -28,7 +28,7 @@ List<Article> articles=[
   ),
 
   Article(
-      ArticleImage : 'images/plant.jpg',
+      articleImage : 'images/plant.jpg',
       description: 'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
@@ -46,7 +46,7 @@ List<Article> articles=[
   ),
 
   Article(
-      ArticleImage : 'images/purifyplant.jpg',
+      articleImage : 'images/purifyplant.jpg',
       description: 'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'

@@ -18,11 +18,11 @@ class ExpertsProfile extends StatefulWidget {
   var expertBio;
   var expertLanguages;
   var expertPrice;
-  var ExpertImage;
+  var expertImage;
 
-  var ArticleTitle;
-  var ArticleImage;
-  var ArticleDescription;
+  var articleTitle;
+  var articleImage;
+  var articleDescription;
 
 
   ExpertsProfile(
@@ -31,22 +31,22 @@ class ExpertsProfile extends StatefulWidget {
       this.expertBio,
       this.expertLanguages,
       this.expertPrice,
-      this.ExpertImage,
-      this.ArticleImage,
-      this.ArticleDescription,
-      this.ArticleTitle});
+      this.expertImage,
+      this.articleImage,
+      this.articleDescription,
+      this.articleTitle});
 
   @override
   _ExpertsProfileState createState() => _ExpertsProfileState(
-      ExpertImage: this.ExpertImage,
+      expertImage: this.expertImage,
       expertName: this.expertName,
       expertTitle: this.expertTitle,
       expertBio: this.expertBio,
       expertLanguages: this.expertLanguages,
       expertPrice: this.expertPrice,
-      ArticleTitle: this.ArticleTitle,
-      ArticleDescription:this.ArticleDescription,
-      ArticleImage: this.ArticleImage
+      articleTitle: this.articleTitle,
+      articleDescription:this.articleDescription,
+      articleImage: this.articleImage
   );
 }
 
@@ -57,21 +57,21 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
   var expertBio;
   var expertLanguages;
   var expertPrice;
-  var ExpertImage;
-  var ArticleImage;
-  var ArticleDescription;
-  var ArticleTitle;
+  var expertImage;
+  var articleImage;
+  var articleDescription;
+  var articleTitle;
 
   _ExpertsProfileState(
-      {this.ExpertImage,
+      {this.expertImage,
       this.expertName,
       this.expertTitle,
       this.expertBio,
       this.expertLanguages,
       this.expertPrice,
-      this.ArticleImage,
-      this.ArticleDescription,
-      this.ArticleTitle});
+      this.articleImage,
+      this.articleDescription,
+      this.articleTitle});
 
   @override
   void initState() {
@@ -92,7 +92,7 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
                 child: ExpertCard(
                   details: Column(
                     children: [
-                      Image(image: AssetImage(ExpertImage)),
+                      Image(image: AssetImage(expertImage)),
                       SizedBox(height: 15,),
                       Text(expertName , style: kWelcomeScreensTitleText,),
                       SizedBox(height: 15,),
@@ -116,7 +116,7 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
                       height: 75.0,
                       child: RaisedButton(
                         onPressed: () {
-                          _PopUp(context);
+                          _popUp(context);
                         },
                         child: Text(
                           "Book an appointment",
@@ -166,16 +166,16 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
                     return ArticlesCard(
                       details: Column(
                         children: [
-                          Image(image: AssetImage(articles[index].ArticleImage) , height: 200, width: 200),
+                          Image(image: AssetImage(articles[index].articleImage) , height: 200, width: 200),
                           Text(articles[index].title , style: kWelcomeScreensTitleText,),
                           //Text(articles[index].description)
                         ],
                       ),
-                      OnPress: () {
+                      onPress: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ArticlesPage(ArticleImage:articles[index].ArticleImage , ArticleTitle:articles[index].title , ArticleDescription:articles[index].description),
+                              builder: (context) => ArticlesPage(articleImage:articles[index].articleImage , articleTitle:articles[index].title , articleDescription:articles[index].description),
                             ));
                       },
                     );
@@ -190,7 +190,7 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
     );
   }
 
-  void _PopUp(context) {
+  void _popUp(context) {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
@@ -209,7 +209,7 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
                       height: 50.0,
                       child: RaisedButton(
                         onPressed: () {
-                          _ThankYouPopUp(context);
+                          _thankYouPopUp(context);
                         },
                         child: Text(
                           "submit",
@@ -226,7 +226,7 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
         });
   }
 
-  void _ThankYouPopUp(context) {
+  void _thankYouPopUp(context) {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {

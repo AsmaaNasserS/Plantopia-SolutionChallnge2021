@@ -1,8 +1,8 @@
-import 'dart:html';
+
 
 class Plants{ //gallery
 
-Url photo;
+String photo;
 String plantName;
 String light;
 String watered;
