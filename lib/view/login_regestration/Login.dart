@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gp_app/service/authentication.dart';
 import '../../const.dart';
+import '../EditProfile.dart';
 import 'ForgetPassword.dart';
 import 'SignUp.dart';
+
+import 'package:provider/provider.dart';
 
 
 class Login extends StatefulWidget {
@@ -97,10 +101,21 @@ class _LoginState extends State<Login> {
               Container(
                 height: mediaQuery.height * 0.09,
                 child: GestureDetector(
-                  onTap: () {
+
+    onTap: () async {
+
+      print(_emailController.text.trim());
+
+        context.read<AuthenticationService>().signIn(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+
+      ) ;
+      Navigator.push( context, MaterialPageRoute(builder: (context) => EditProfile(), ));
+    },
                     ///* TODO LOG IN PAGE *////
                     ///* TODO ONCLICK CHANGE COLOR *////
-                  },
+
                   child: Material(
                     borderRadius: BorderRadius.circular(20.0),
                     //   shadowColor: Colors.greenAccent,

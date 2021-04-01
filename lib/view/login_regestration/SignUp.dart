@@ -1,8 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-//import 'file:///C:/Users/Dell/AndroidStudioProjects/Graduation-Project/lib/view/login_regestration/Login.dart';
+import 'package:gp_app/firestore/FireStoreUser.dart';
+import 'package:gp_app/service/Users.dart';
+import 'package:gp_app/service/authentication.dart';
+
 import 'package:gp_app/view/login_regestration/Login.dart';
 import '../../const.dart';
+import 'package:provider/provider.dart';
+
+import 'Login.dart';
+import 'Login.dart';
 
 class SignUp extends StatefulWidget {
   static String id = "SignUp";
@@ -19,7 +27,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    //  resizeToAvoidBottomPadding: false,
+
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 25.0),
@@ -102,6 +110,16 @@ class _SignUpState extends State<SignUp> {
                   height: 50.0,
                   child: GestureDetector(
                     onTap: () {
+
+                      context.read<AuthenticationService>().signUp(
+                          email: _emailController.text.trim(),
+                          password: _passwordController.text.trim(),
+                      );
+                      Navigator.push( context, MaterialPageRoute(builder: (context) => Login()), );
+
+                      print("Users.getInstance().userID");
+                      print(Users.getInstance().userID);
+                      //   FireStoreUser.addUserName(_userNameController.text);
                       ///* TODO SIGN UP PAGE *////
                       ///* TODO ONCLICK CHANGE COLOR *////
                     },
@@ -189,8 +207,8 @@ class _SignUpState extends State<SignUp> {
                         InkWell(
                           onTap: () {
                             Navigator.pushNamed(
-                              context,
-                              Login.id
+                                context,
+                                Login.id
                             );
 
                             ///*done TODO  GO TO Sign in  */////
