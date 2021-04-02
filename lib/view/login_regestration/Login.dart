@@ -104,14 +104,14 @@ class _LoginState extends State<Login> {
 
     onTap: () async {
 
-      print(_emailController.text.trim());
+                    print(_emailController.text.trim());
 
         context.read<AuthenticationService>().signIn(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
 
       ) ;
-      Navigator.push( context, MaterialPageRoute(builder: (context) => EditProfile(), ));
+
     },
                     ///* TODO LOG IN PAGE *////
                     ///* TODO ONCLICK CHANGE COLOR *////
