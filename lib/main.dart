@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_app/service/authentication.dart';
 import 'package:gp_app/view/EditProfile.dart';
+import 'package:gp_app/view/externalScreens/notificationsScreen.dart';
 import 'package:gp_app/view/login_regestration/ForgetPassword.dart';
 import 'package:gp_app/view/login_regestration/Login.dart';
 import 'package:gp_app/view/login_regestration/PasswordUpdated.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         ),
         home: Home(),
         initialRoute: Home.id,
-   /*       routes: {
+          routes: {
           WelcomeScreen1.id: (context) => WelcomeScreen1(),
             EditProfile.id: (context) => EditProfile(),
             ConstWelcomeScreen.id: (context) => ConstWelcomeScreen(),
@@ -51,7 +52,8 @@ class MyApp extends StatelessWidget {
             ForgetPassword.id: (context) => ForgetPassword(),
             ResetPassword.id: (context) => ResetPassword(),
             PasswordUpdated.id: (context) => PasswordUpdated(),
-          } */
+            NotificationScreen.id: (context) => NotificationScreen(),
+          }
      ),
     );
   }

@@ -150,6 +150,7 @@ class _HomeState extends State<Home> {
                           Icons.notifications_none_rounded,
                           size: 30,
                           color: currentTab == 3 ? kInActivelogInButtonColor : Colors.grey,
+
                         ),
                         Text(
                           'News',

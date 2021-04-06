@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gp_app/firestore/FireStorePost.dart';
 import 'package:gp_app/service/Posts.dart';
 import 'package:gp_app/service/Users.dart';
@@ -14,19 +15,17 @@ import 'package:provider/provider.dart';
 import '../../const.dart';
 import 'CommentPage.dart';
 
-
-
 class Profile extends StatefulWidget {
-
   @override
   _ProfileState createState() => _ProfileState();
 }
 
 class _ProfileState extends State<Profile> {
-  var url ='http://localhost:8181/plant/expert';
+  var url = 'http://localhost:8181/plant/expert';
 
   FireStorePost firestore;
   bool liked = false;
+
   _likedPost() {
     setState(() {
       liked = !liked;
@@ -37,45 +36,47 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
     Widget article = Container(
-      height: 220,
+      height: mediaQuery.height * .25,
       child: GridView.count(
         primary: false,
-        padding: const EdgeInsets.all(1.5),
-        childAspectRatio: 1.0,
-        mainAxisSpacing: 1.0,
-        crossAxisSpacing: 1.0,
+        padding: const EdgeInsets.all(9.0),
+        childAspectRatio: 1.35,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: .6,
         crossAxisCount: 1,
         scrollDirection: Axis.horizontal,
         children: List.generate(articles.length, (index) {
           return ArticlesCard(
-            details: Stack(children: <Widget>[
+            details: Stack(
+
+                children: <Widget>[
               ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(20.0)),
                 child: Image(
                   image: AssetImage(articles[index].articleImage),
                   fit: BoxFit.cover,
-                  height: 200,
-                  width: 200,
+                  height: mediaQuery.height * 0.2,
+                  width: mediaQuery.width * 0.4,
                 ),
               ),
               Container(
-                height: 200,
-                width: 200,
+                height: mediaQuery.height * 0.2,
+                width: mediaQuery.width * 0.4,
                 decoration: new BoxDecoration(
                   color: Color.fromRGBO(0, 0, 0, 0.65),
                   borderRadius: BorderRadius.all(Radius.circular(20.0)),
                 ),
               ),
               Container(
-                width: 200,
-                padding: EdgeInsets.only(top: 150, left: 10),
+                width: mediaQuery.width * 0.4,
+                padding: EdgeInsets.only(top: 80, left: 10),
                 child: Text(
                   articles[index].title,
                   style: TextStyle(
-                      fontSize: 25.00,
+                      fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
-                  overflow: TextOverflow.ellipsis,
+                  overflow: TextOverflow.visible,
                 ),
               ),
             ]),
@@ -102,81 +103,86 @@ class _ProfileState extends State<Profile> {
     }
 
     return Scaffold(
-
       appBar: AppBar(
         backgroundColor: kActiveBackButtonColor,
-        title:  Center(
-          child: Text("News Feed",  style: TextStyle(
-            fontSize: 25.00,
-            fontWeight: FontWeight.bold,
-            color: KTextLightColour,
-          ),),
+        title: Center(
+          child: Text(
+            "News Feed",
+            style: TextStyle(
+              fontSize: 25.00,
+              fontWeight: FontWeight.bold,
+              color: KTextLightColour,
+            ),
+          ),
         ),
-
-
       ),
-    body: Container(
-        padding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 25.0),
+      body: Container(
+        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
         child: SingleChildScrollView(
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  child: Text(
-                    "Most popular articles",
-                    style: TextStyle(
-                      fontSize: 25.00,
-                      fontWeight: FontWeight.bold,
-                      color: KTextLightColour,
-                    ),
-                  ),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
+                  Widget>[
+            Container(
+              child: Text(
+                "Most popular articles",
+                style: TextStyle(
+                  fontSize: 25.00,
+                  fontWeight: FontWeight.bold,
+                  color: KTextLightColour,
                 ),
-                SizedBox(height: 20.0),
-                article,
-                Container(
-                  child: Column(
-                      children: List.generate(x.length, (index) {
-                    return PostCard(
-                      details: Container(
-                        width: mediaQuery.width,
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(left: 10, right: 10),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    width: mediaQuery.width,
-                                    child: ListTile(
-                                       title: Text(
-                                        (x[index].name),
-                                        style: kWelcomeScreensTitleText,
+              ),
+            ),
+            SizedBox(height: 20.0),
+            article,
+            Container(
+              child: Column(
+                  children: List.generate(x.length, (index) {
+                return PostCard(
+                  details: Container(
+                    width: mediaQuery.width,
+                    child: Column(
+                      children: [
+                        Container(
+                          child: Column(
+                            children: [
+                              Container(
+                                width: mediaQuery.width,
+                                child: ListTile(
+                                  title: Text(
+                                    (x[index].name),
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w600),
+                                    //style: kWelcomeScreensTitleText,
+                                  ),
+                                  subtitle: Text(
+                                    ("mennasayed@gmail.com"),
+                                  ),
+                                  leading: CircleAvatar(
+                                      child: ClipOval(
+                                    child: Image(
+                                      height: 50.0,
+                                      width: 50.0,
+                                      image: AssetImage(
+                                        x[index].image,
                                       ),
-                                      subtitle: Text(
-                                        ("mennasayed@gmail.com"),
-                                      ),
-                                      leading: CircleAvatar(
-                                          child: ClipOval(
-                                        child: Image(
-                                          height: 50.0,
-                                          width: 50.0,
-                                          image: AssetImage(
-                                            x[index].image,
-                                          ),
-                                          fit: BoxFit.cover,
-                                        ),
-                                      )),
-                                      trailing: Container(
-                                          // padding: EdgeInsets.only(left: 40),
-                                          width: mediaQuery.width * 0.2,
-                                          height: 30,
-                                          child: GestureDetector(
-                                            onTap: () async{
-                                              print("sssssssssssssssssssssssssssssssss");
-                                              print(  FireStorePost.retrieveAllPosts()   );
-                                              print("sssssssssssssssssssssssssssssssss");
-                                              //todo follow
-                                              //todo هبد
+                                      fit: BoxFit.cover,
+                                    ),
+                                  )),
+                                  trailing: Container(
+                                      // padding: EdgeInsets.only(left: 40),
+                                      width: mediaQuery.width * 0.2,
+                                      height: 30,
+                                      child: GestureDetector(
+                                        onTap: () async {
+                                          print(
+                                              "sssssssssssssssssssssssssssssssss");
+                                          print(
+                                              FireStorePost.retrieveAllPosts());
+                                          print(
+                                              "sssssssssssssssssssssssssssssssss");
+                                          //todo follow
+                                          //todo هبد
                                           /* context
                                                   .read<AuthenticationService>()
                                                   .signOut();*/
@@ -187,41 +193,44 @@ class _ProfileState extends State<Profile> {
                                               //   print(post.toJson());
                                               await  FireStorePost.addPost(post);
 */
-                                            },
-                                            child: Material(
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                              color: kInActiveOrangeColor,
-                                              child: Center(
-                                                child: Text('Follow',
-                                                    style:
-                                                        kWelcomeScreensTitleText),
-                                              ),
-                                            ),
-                                          )),
-                                    ),
-                                  )
-                                  //SizedBox(height: 15,),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              height: 500,
-                              child: Image(
-                                image: NetworkImage(
-                                    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/yucca-cane-plant-in-a-pot-on-a-white-background-royalty-free-image-1580856558.jpg'),
-                                fit: BoxFit.cover,
-                                height: 300,
-                                width: 400,
-                              ),
-                            ),
-                            Container(
-                              width: mediaQuery.width,
-                              //    color: Colors.black,
-                              child: Row(
+                                        },
+                                        child: Material(
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                          color: kInActiveOrangeColor,
+                                          child: Center(
+                                            child: Text('Follow',
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    color: Colors.white)),
+                                          ),
+                                        ),
+                                      )),
+                                ),
+                              )
+                              //SizedBox(height: 15,),
+                            ],
+                          ),
+                        ),
+
+                        Container(
+                          height: mediaQuery.height * 0.45,
+                          width: mediaQuery.width * 0.95,
+                          child: Image(
+                            image: NetworkImage(
+                                'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/yucca-cane-plant-in-a-pot-on-a-white-background-royalty-free-image-1580856558.jpg'),
+                            fit: BoxFit.cover,
+
+                          ),
+                        ),
+                        Container(
+                          width: mediaQuery.width,
+                          //    color: Colors.black,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
                                 children: [
                                   IconButton(
                                       icon: Icon(
@@ -244,52 +253,50 @@ class _ProfileState extends State<Profile> {
                                       _commentPage(x[index].image);
                                     },
                                   ),
-                                  SizedBox(
-                                    width: 215,
-                                  ),
-                                  IconButton(
-                                    icon: Icon(Icons.bookmark_border),
-                                    iconSize: 30.0,
-                                    color: Colors.green,
-                                    onPressed: () => print('Save post'),
-                                  ),
                                 ],
                               ),
-                            ),
-                            Container(
-                              width: mediaQuery.width,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(x[index].name),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  //todo text flow over
-                                  Text(
-                                    x[index].description,
-                                    style: kWelcomeScreensTitleText,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ],
+                              IconButton(
+                                icon: Icon(Icons.bookmark_border),
+                                iconSize: 30.0,
+                                color: Colors.green,
+                                onPressed: () => print('Save post'),
                               ),
-                            ),
-                            SizedBox(
-                              height: 40,
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      //TODO LOVE   onPress: ,
-                    );
-                  })),
-                ),
-              ]),
+                        Container(
+                          width: mediaQuery.width,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(x[index].name),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              //todo text flow over
+                              Text(
+                                x[index].description,
+                                style: kWelcomeScreensTitleText,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                      ],
+                    ),
+                  ),
+                  //TODO LOVE   onPress: ,
+                );
+              })),
+            ),
+          ]),
         ),
       ),
-
     );
   }
 }

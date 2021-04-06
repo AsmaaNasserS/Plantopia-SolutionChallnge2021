@@ -23,7 +23,7 @@ List<Article> articles=[
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj',
-      title: 'House plants',
+      title: 'House plants of alice in wonder land',
       owner: 'menna'
   ),
 
