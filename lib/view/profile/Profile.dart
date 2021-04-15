@@ -11,6 +11,7 @@ import 'package:gp_app/view/expert/ArticlesCard.dart';
 import 'package:gp_app/view/expert/ArticlesPage.dart';
 import 'package:gp_app/view/profile/Listprofile.dart';
 import 'package:gp_app/view/profile/postcard.dart';
+import 'package:gp_app/view/widgets/side_drawer.dart';
 import 'package:provider/provider.dart';
 import '../../const.dart';
 import 'CommentPage.dart';
@@ -47,9 +48,7 @@ class _ProfileState extends State<Profile> {
         scrollDirection: Axis.horizontal,
         children: List.generate(articles.length, (index) {
           return ArticlesCard(
-            details: Stack(
-
-                children: <Widget>[
+            details: Stack(children: <Widget>[
               ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(20.0)),
                 child: Image(
@@ -103,6 +102,7 @@ class _ProfileState extends State<Profile> {
     }
 
     return Scaffold(
+      drawer: sideDrawer(),
       appBar: AppBar(
         backgroundColor: kActiveBackButtonColor,
         title: Center(
@@ -132,7 +132,7 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 15.0),
             article,
             Container(
               child: Column(
@@ -197,7 +197,7 @@ class _ProfileState extends State<Profile> {
                                         child: Material(
                                           borderRadius:
                                               BorderRadius.circular(20.0),
-                                          color: kInActiveOrangeColor,
+                                          color: kActiveOrangeColor,
                                           child: Center(
                                             child: Text('Follow',
                                                 style: TextStyle(
@@ -212,16 +212,17 @@ class _ProfileState extends State<Profile> {
                             ],
                           ),
                         ),
-
                         Container(
                           height: mediaQuery.height * 0.45,
                           width: mediaQuery.width * 0.95,
-                          child: Image(
-                            image: NetworkImage(
+
+                          child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20.0),
+
+                            child: Image( image: NetworkImage(
                                 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/yucca-cane-plant-in-a-pot-on-a-white-background-royalty-free-image-1580856558.jpg'),
                             fit: BoxFit.cover,
-
-                          ),
+                          ),),
                         ),
                         Container(
                           width: mediaQuery.width,
@@ -259,7 +260,21 @@ class _ProfileState extends State<Profile> {
                                 icon: Icon(Icons.bookmark_border),
                                 iconSize: 30.0,
                                 color: Colors.green,
-                                onPressed: () => print('Save post'),
+                                onPressed: () {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      duration: Duration(milliseconds: 1000),
+                                      behavior: SnackBarBehavior.floating,
+                                      content: Text('You have saved this post'),
+                                      action: SnackBarAction(
+                                        label: 'UNDO',
+                                        onPressed: () {
+                                          print("saved!");
+                                        },
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ],
                           ),

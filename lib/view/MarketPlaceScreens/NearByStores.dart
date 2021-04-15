@@ -16,7 +16,7 @@ class _NearByState extends State<NearBy> {
       padding: EdgeInsets.only(top: mediaQuery.height *0.03) , // we added pading o change appbar place
       child: Scaffold(
         appBar: AppBar(
-          elevation: 15,
+          elevation: 3,
       backgroundColor: kCardColor,
             actions: <Widget>[
             IconButton(

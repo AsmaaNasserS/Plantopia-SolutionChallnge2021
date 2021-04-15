@@ -127,74 +127,83 @@ class MyStoreCard2 extends StatelessWidget {
     // we wrapped the card with a container to ba able to manage the height
     return Container(
       height: mediaQuery.height * 0.2,
+      width: mediaQuery.width * 0.9,
       child: Card(
         semanticContainer: true,
-        elevation: 5, // shadow
+        elevation: 1, // shadow
         color: kCardColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(15),
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            ListTile(
-              leading: Container(
-                height: 100,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'images/img.jpg',
-                  ),
-                ),
-              ),
-              title: Text(
-                'Sun Flower Seeds',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  color: kTextBoldColour,
-                ),
-              ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal:15.0, vertical: 8),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-              subtitle: Text(
-                'body 2 ',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  color: KTextLightColour,
-                ),
-              ),
-            ),
-            // We rapped the button inside a row to have it in the right
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('30LE', style: kBodyTextColour, textAlign: TextAlign.left ,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 130),
-                  child:
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
+            children: <Widget>[
+              ListTile(
+                
+                contentPadding: EdgeInsets.all(0),
 
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      color: kInActivelogInButtonColor,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => ProductDetails(),
-                        ));
-                      },
-                      child: Text(
-                        'View Details',
-                        style: klogInButtonTextStyle,
-                      ),
+                leading: Container(
+                  height: mediaQuery.height * 0.2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6.0),
+                    child: Image.asset(
+                      'images/img.jpg',
                     ),
                   ),
                 ),
-              ],
-            ),
-          ],
+                title: Text(
+                  'Sun Flower Seeds',
+                  style: TextStyle(
+                    fontSize: 20.0, fontWeight: FontWeight.bold,
+                    color: kTextBoldColour,
+                  ),
+                ),
+
+                subtitle: Text(
+                  'body 2 ',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: KTextLightColour,
+                  ),
+                ),
+              ),
+
+              // We rapped the button inside a row to have it in the right
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('30LE', style: kBodyTextColour , textAlign: TextAlign.start,),
+
+
+                      RaisedButton(
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        color: kInActivelogInButtonColor,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ProductDetails(),
+                          ));
+                        },
+                        child: Text(
+                          'View Details',
+                          style: klogInButtonTextStyle.copyWith(fontSize: 14),
+                        ),
+                      ),
+
+
+                ],
+              ),
+            ],
+          ),
         ),
       ),
 
@@ -220,7 +229,7 @@ class MyStoreCard1 extends StatelessWidget {
       height: mediaQuery.height * 0.2,
       child: Card(
         semanticContainer: true,
-        elevation: 5, // shadow
+        elevation: 2, // shadow
         color: kCardColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
