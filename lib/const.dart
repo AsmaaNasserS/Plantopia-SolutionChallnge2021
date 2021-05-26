@@ -6,7 +6,7 @@ const kActivelogInButtonColor = Color(0xFF0B9755); // login + get started + sign
 const kInActiveBackButtonColor = Color(0xFFEBEBEB); // or any grey button
 const kActiveBackButtonColor = Color(0xFFD5D5D5);
 
-const kActiveOrangeColor = Color(0xFFE17820);
+const kActiveOrangeColor = Color(0xFFE17700);
 const kInActiveOrangeColor = Color(0xFFE3AA64);
 
 const kBottomFootbarContainerColour = Color(0xFFEBEBEB);

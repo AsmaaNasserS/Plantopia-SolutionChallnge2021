@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class NoResults extends StatelessWidget {
-  final String type;
+  final String msg;
   final IconData icon;
 
-  NoResults(this.type, this.icon);
+  NoResults({this.msg, this.icon});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 50.0,vertical: 30 ),
+    return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -20,7 +19,7 @@ class NoResults extends StatelessWidget {
             color: Colors.grey.shade600,
           ),
           SizedBox(height: 20),
-          Text('No $type to show',
+          Text(msg,
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.grey.shade600,
