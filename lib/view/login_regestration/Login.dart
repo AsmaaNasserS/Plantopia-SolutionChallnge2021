@@ -46,6 +46,7 @@ class _LoginState extends State<Login> {
                   },
                   type: TextInputType.emailAddress,
                   prefix: Icons.email,
+                  controller: _emailController,
                   submit: (value) {
                     _emailController.text = value;
                   },
@@ -61,6 +62,7 @@ class _LoginState extends State<Login> {
                   obsecureText: true,
                   prefix: Icons.lock,
                   type: TextInputType.text,
+                  controller: _passwordController,
                   lines: 1,
                   submit: (value) {
                     _passwordController.text = value;

@@ -5,7 +5,7 @@ import '../../const.dart';
 class DefTextField extends StatelessWidget {
   final TextEditingController controller;
   final String label;
-  final Function validator;
+  final Function validator, onChanged;
   final IconData prefix;
   final Function submit;
   final TextInputType type;
@@ -15,9 +15,10 @@ class DefTextField extends StatelessWidget {
   DefTextField(
       {this.controller,
       @required this.label,
-      @required this.validator,
+  this.validator,
       @required this.type,
       this.submit,
+        this.onChanged,
       this.obsecureText = false,
       this.lines,
       this.prefix});
@@ -75,6 +76,7 @@ class DefTextField extends StatelessWidget {
         labelStyle: TextStyle(fontWeight: FontWeight.w600,),
       ),
       obscureText: obsecureText,
+      onChanged: onChanged,
     );
   }
 }

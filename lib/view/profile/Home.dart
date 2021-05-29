@@ -1,6 +1,7 @@
 import 'package:gp_app/const.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
+import 'package:gp_app/view/externalScreens/search_screen.dart';
 import 'package:gp_app/view/profile/Profile.dart';
 import 'package:gp_app/view/externalScreens/notificationsScreen.dart';
 import 'package:gp_app/view/widgets/side_drawer.dart';
@@ -18,6 +19,7 @@ class _HomeState extends State<Home> {
     Profile(),
     NotificationScreen(),
     MarketPlace(),
+    SearchScreen()
   ]; // to store nested tabs
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = Profile();
@@ -89,7 +91,7 @@ class _HomeState extends State<Home> {
                       setState(() {
                         // currentScreen = Articles Search Screen
 
-                        currentTab = 1;
+                        currentTab = 3;
                       });
                     },
                     child: Column(
@@ -98,14 +100,14 @@ class _HomeState extends State<Home> {
                         Icon(
                           Icons.search,
                           size: 30,
-                          color: currentTab == 1
+                          color: currentTab == 3
                               ? kInActivelogInButtonColor
                               : Colors.grey,
                         ),
                         Text(
                           'Search',
                           style: TextStyle(
-                            color: currentTab == 1
+                            color: currentTab == 3
                                 ? kInActivelogInButtonColor
                                 : Colors.grey,
                           ),

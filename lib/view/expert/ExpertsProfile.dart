@@ -82,6 +82,9 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backwardsCompatibility: true,
+      ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 25.0),
         child: SingleChildScrollView(
@@ -157,19 +160,25 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
                 child: GridView.count(
                   primary: false,
                   padding: const EdgeInsets.all(1.5),
-                  childAspectRatio: 1.0,
-                  mainAxisSpacing: 1.0,
+                  childAspectRatio: 3.0,
+                  mainAxisSpacing: 10.0,
                   crossAxisSpacing: 1.0,
                   crossAxisCount: 1,
                   scrollDirection: Axis.horizontal,
                   children: List.generate(articles.length, (index) {
                     return ArticlesCard(
-                      details: Column(
-                        children: [
-                          Image(image: AssetImage(articles[index].articleImage) , height: 200, width: 200),
-                          Text(articles[index].title , style: kWelcomeScreensTitleText,),
-                          //Text(articles[index].description)
-                        ],
+                      details: Container(width: 200,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image(image: AssetImage(articles[index].articleImage) , height: 200, width: 200, fit: BoxFit.cover,),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(articles[index].title , style: kWelcomeScreensTitleText.copyWith(fontSize: 16,),textAlign: TextAlign.left,),
+                            ),
+                            //Text(articles[index].description)
+                          ],
+                        ),
                       ),
                       onPress: () {
                         Navigator.push(

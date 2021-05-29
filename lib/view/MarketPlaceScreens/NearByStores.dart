@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gp_app/const.dart';
+import 'package:gp_app/view/widgets/textFormField.dart';
 import 'MarketPlaceComponents.dart';
 import 'ProductDetails.dart';
 import 'marketCard.dart';
@@ -16,6 +17,7 @@ class NearBy extends StatefulWidget {
 class _NearByState extends State<NearBy> {
   @override
   Widget build(BuildContext context) {
+    final _searchController = TextEditingController();
     final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -42,17 +44,21 @@ class _NearByState extends State<NearBy> {
                       ),
                     ),
                     Expanded(
-                      child: TextField(
-                        textInputAction: TextInputAction.next,
-                        cursorRadius: Radius.circular(30.0),
-                        cursorColor: Colors.grey,
-                        decoration: InputDecoration.collapsed(
-                          hintText: ' Search by name or address',
-                          hintStyle: kLightText.copyWith(fontSize: 17),
+                      child: DefTextField(
+                        type: TextInputType.text,
+                        label: 'search',
+                        onChanged:(){} ,
+                        controller: _searchController,
+                        prefix: Icons.search_rounded,
+
+                        //cursorColor: Colors.grey,
+                        // decoration: InputDecoration.collapsed(
+                        //   hintText: ' Search by name or address',
+                        //   hintStyle: kLightText.copyWith(fontSize: 17),
                         ),
-                        onChanged: (value) {},
+
                       ),
-                    ),
+
                     InkWell(
                       child: Icon(
                         Icons.mic,

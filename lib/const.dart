@@ -9,7 +9,9 @@ const kActiveBackButtonColor = Color(0xFFD5D5D5);
 const kActiveOrangeColor = Color(0xFFE17700);
 const kInActiveOrangeColor = Color(0xFFE3AA64);
 
-const kBottomFootbarContainerColour = Color(0xFFEBEBEB);
+const appBarColor = Color(0xFFEBEBEB);
+
+//const kBottomFootbarContainerColour = Color(0xFFEBEBEB);
 const kButtonTextColour =  Color(0xFFF8F8F8);
 
 const kBackgroundColor = Color(0xFFF8F8F8); // the app background shades

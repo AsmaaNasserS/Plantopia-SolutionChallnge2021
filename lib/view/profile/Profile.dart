@@ -11,12 +11,15 @@ import 'package:gp_app/view/expert/ArticlesCard.dart';
 import 'package:gp_app/view/expert/ArticlesPage.dart';
 import 'package:gp_app/view/profile/Listprofile.dart';
 import 'package:gp_app/view/profile/postcard.dart';
+import 'package:gp_app/view/widgets/articles_view.dart';
 import 'package:gp_app/view/widgets/side_drawer.dart';
 import 'package:provider/provider.dart';
 import '../../const.dart';
 import 'CommentPage.dart';
 
 class Profile extends StatefulWidget {
+  static const String id = 'HomePage';
+
   @override
   _ProfileState createState() => _ProfileState();
 }
@@ -37,61 +40,8 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
     Widget article = Container(
-      height: mediaQuery.height * .25,
-      child: GridView.count(
-        primary: false,
-        padding: const EdgeInsets.all(9.0),
-        childAspectRatio: 1.35,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: .6,
-        crossAxisCount: 1,
-        scrollDirection: Axis.horizontal,
-        children: List.generate(articles.length, (index) {
-          return ArticlesCard(
-            details: Stack(children: <Widget>[
-              ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                child: Image(
-                  image: AssetImage(articles[index].articleImage),
-                  fit: BoxFit.cover,
-                  height: mediaQuery.height * 0.2,
-                  width: mediaQuery.width * 0.4,
-                ),
-              ),
-              Container(
-                height: mediaQuery.height * 0.2,
-                width: mediaQuery.width * 0.4,
-                decoration: new BoxDecoration(
-                  color: Color.fromRGBO(0, 0, 0, 0.65),
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                ),
-              ),
-              Container(
-                width: mediaQuery.width * 0.4,
-                padding: EdgeInsets.only(top: 80, left: 10),
-                child: Text(
-                  articles[index].title,
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                  overflow: TextOverflow.visible,
-                ),
-              ),
-            ]),
-            onPress: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ArticlesPage(
-                        articleImage: articles[index].articleImage,
-                        articleTitle: articles[index].title,
-                        articleDescription: articles[index].description),
-                  ));
-            },
-          );
-        }),
-      ),
+      height: mediaQuery.height * .24,
+      child: HomeArticles(mediaQuery: mediaQuery),
     );
 
     _commentPage(String image) {
@@ -104,35 +54,51 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       drawer: sideDrawer(),
       appBar: AppBar(
-        backgroundColor: kActiveBackButtonColor,
-        title: Center(
-          child: Text(
-            "News Feed",
-            style: TextStyle(
-              fontSize: 25.00,
-              fontWeight: FontWeight.bold,
-              color: KTextLightColour,
-            ),
+        centerTitle: true,
+        backgroundColor: appBarColor,
+        title: Text(
+          "News Feed",
+          style: TextStyle(
+            fontSize: 25.00,
+            fontWeight: FontWeight.bold,
+            color: KTextLightColour,
           ),
         ),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+        padding: EdgeInsets.symmetric(horizontal: 10.0),
         child: SingleChildScrollView(
           child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-                  Widget>[
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Container(
-              child: Text(
-                "Most popular articles",
-                style: TextStyle(
-                  fontSize: 25.00,
-                  fontWeight: FontWeight.bold,
-                  color: KTextLightColour,
-                ),
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // //crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Most popular articles",
+                    style: TextStyle(
+                      fontSize: 25.00,
+                      fontWeight: FontWeight.bold,
+                      color: KTextLightColour,
+                    ),
+                  ),
+                  FlatButton(
+                    padding: EdgeInsets.only(left: 12),
+                    onPressed: () {},
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text('all articles'),
+                        Icon(Icons.navigate_next)
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 15.0),
             article,
             Container(
               child: Column(
@@ -215,14 +181,14 @@ class _ProfileState extends State<Profile> {
                         Container(
                           height: mediaQuery.height * 0.45,
                           width: mediaQuery.width * 0.95,
-
                           child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
-
-                            child: Image( image: NetworkImage(
-                                'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/yucca-cane-plant-in-a-pot-on-a-white-background-royalty-free-image-1580856558.jpg'),
-                            fit: BoxFit.cover,
-                          ),),
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image(
+                              image: NetworkImage(
+                                  'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/yucca-cane-plant-in-a-pot-on-a-white-background-royalty-free-image-1580856558.jpg'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
                         Container(
                           width: mediaQuery.width,
@@ -286,14 +252,14 @@ class _ProfileState extends State<Profile> {
                               SizedBox(
                                 width: 10,
                               ),
-                              Text(x[index].name),
+                              Text(x[index].name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.grey.shade800),),
                               SizedBox(
                                 width: 10,
                               ),
                               //todo text flow over
                               Text(
                                 x[index].description,
-                                style: kWelcomeScreensTitleText,
+                                style: kTextDescription.copyWith(color: Colors.grey.shade600),
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ],

@@ -8,6 +8,7 @@ import 'package:gp_app/view/MarketPlaceScreens/MyStore.dart';
 import 'package:gp_app/view/MarketPlaceScreens/NearByStores.dart';
 import 'package:gp_app/view/MarketPlaceScreens/ProductDetails.dart';
 import 'package:gp_app/view/externalScreens/notificationsScreen.dart';
+import 'package:gp_app/view/externalScreens/search_screen.dart';
 import 'package:gp_app/view/login_regestration/ForgetPassword.dart';
 import 'package:gp_app/view/login_regestration/Login.dart';
 import 'package:gp_app/view/login_regestration/PasswordUpdated.dart';
@@ -17,10 +18,15 @@ import 'package:gp_app/view/onboardingScreens/ConstWelcomeScreens.dart';
 import 'package:gp_app/view/onboardingScreens/WelcomeScreen1.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gp_app/view/profile/Home.dart';
+import 'package:gp_app/view/profile/Profile.dart';
 
 import 'package:provider/provider.dart';
 
 import 'const.dart';
+import 'view/MarketPlaceScreens/EditProductProfile.dart';
+import 'view/MarketPlaceScreens/EditProductProfile.dart';
+import 'view/expert/ExpertsList.dart';
+import 'view/expert/ExpertsList.dart';
 import 'view/login_regestration/Login.dart';
 
 Future<void> main() async {
@@ -59,7 +65,7 @@ class MyApp extends StatelessWidget {
           // Your app THeme color , used to change drawer colour
         ),
         home: Home(),
-        initialRoute: EditProductProfile.id,
+        initialRoute: Profile.id,
         routes: {
           WelcomeScreen1.id: (context) => WelcomeScreen1(),
           EditProfile.id: (context) => EditProfile(),
@@ -71,7 +77,10 @@ class MyApp extends StatelessWidget {
           PasswordUpdated.id: (context) => PasswordUpdated(),
           MyStore.id: (context) => MyStore(),
           NearBy.id: (context) => NearBy(),
-          ProductDetails.id: (context)=> ProductDetails()
+          ProductDetails.id: (context)=> ProductDetails(),
+          EditProductProfile.id: (context) => EditProductProfile(),
+          SearchScreen.id: (context) => SearchScreen(),
+          ExpertsList.id: (context) => ExpertsList(),
 
           //NotificationScreen.id: (context) => NotificationScreen(),
         }),);
