@@ -1,50 +1,55 @@
 import 'package:gp_app/const.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
+import 'package:gp_app/view/externalScreens/search_screen.dart';
 import 'package:gp_app/view/profile/Profile.dart';
-
+import 'package:gp_app/view/externalScreens/notificationsScreen.dart';
+import 'package:gp_app/view/widgets/side_drawer.dart';
 
 class Home extends StatefulWidget {
   static String id = 'Home';
+
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  // Properties & Variables needed
-
   int currentTab = 0; // to keep track of active tab index
   final List<Widget> screens = [
-    Home(),
-    // NotificationScreen(),
+    Profile(),
+    NotificationScreen(),
     MarketPlace(),
-
+    SearchScreen()
   ]; // to store nested tabs
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = Profile();
+
   //= NotificationScreen(); // Our first view in viewport
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: sideDrawer(),
       body: PageStorage(
-        child: Profile(),
+        child: currentScreen,
         bucket: bucket,
       ),
       floatingActionButton: FloatingActionButton(
           elevation: 0,
           backgroundColor: kInActivelogInButtonColor,
-          child: Icon(Icons.camera_alt_outlined,size: 35, ), onPressed: () {}),
+          child: Icon(
+            Icons.camera_alt_outlined,
+            size: 35,
+          ),
+          onPressed: () {}),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color:   kInActiveBackButtonColor,
+        color: kInActiveBackButtonColor,
         elevation: 0,
-
         shape: CircularNotchedRectangle(),
         notchMargin: 4,
         child: Container(
           height: 60,
-
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -55,8 +60,7 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        // currentScreen = Articles Search Screen
-
+                        currentScreen = Profile();
                         currentTab = 0;
                       });
                     },
@@ -64,14 +68,18 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.search,
+                          Icons.house_siding,
                           size: 30,
-                          color: currentTab == 0 ? kInActivelogInButtonColor : Colors.grey,
+                          color: currentTab == 0
+                              ? kInActivelogInButtonColor
+                              : Colors.grey,
                         ),
                         Text(
-                          'Search',
+                          'Home',
                           style: TextStyle(
-                            color: currentTab == 0 ? kInActivelogInButtonColor : Colors.grey,
+                            color: currentTab == 0
+                                ? kInActivelogInButtonColor
+                                : Colors.grey,
                           ),
                         ),
                       ],
@@ -81,27 +89,32 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        // homeScreen
-                        currentTab = 1;
+                        // currentScreen = Articles Search Screen
+
+                        currentTab = 3;
                       });
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.house_siding,
+                          Icons.search,
                           size: 30,
-                          color: currentTab == 1 ? kInActivelogInButtonColor : Colors.grey,
+                          color: currentTab == 3
+                              ? kInActivelogInButtonColor
+                              : Colors.grey,
                         ),
                         Text(
-                          'Home',
+                          'Search',
                           style: TextStyle(
-                            color: currentTab == 1 ? kInActivelogInButtonColor : Colors.grey,
+                            color: currentTab == 3
+                                ? kInActivelogInButtonColor
+                                : Colors.grey,
                           ),
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
 
@@ -115,6 +128,7 @@ class _HomeState extends State<Home> {
                     onPressed: () {
                       setState(() {
                         currentScreen = MarketPlace();
+
                         currentTab = 2;
                       });
                     },
@@ -124,12 +138,16 @@ class _HomeState extends State<Home> {
                         Icon(
                           Icons.storefront,
                           size: 30,
-                          color: currentTab == 2 ? kInActivelogInButtonColor : Colors.grey,
+                          color: currentTab == 2
+                              ? kInActivelogInButtonColor
+                              : Colors.grey,
                         ),
                         Text(
                           'Market',
                           style: TextStyle(
-                            color: currentTab == 2 ? kInActivelogInButtonColor : Colors.grey,
+                            color: currentTab == 2
+                                ? kInActivelogInButtonColor
+                                : Colors.grey,
                           ),
                         ),
                       ],
@@ -139,7 +157,7 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        //    currentScreen = NotificationScreen();
+                        currentScreen = NotificationScreen();
                         currentTab = 3;
                       });
                     },
@@ -149,12 +167,16 @@ class _HomeState extends State<Home> {
                         Icon(
                           Icons.notifications_none_rounded,
                           size: 30,
-                          color: currentTab == 3 ? kInActivelogInButtonColor : Colors.grey,
+                          color: currentTab == 3
+                              ? kInActivelogInButtonColor
+                              : Colors.grey,
                         ),
                         Text(
                           'News',
                           style: TextStyle(
-                            color: currentTab == 3 ? kInActivelogInButtonColor : Colors.grey,
+                            color: currentTab == 3
+                                ? kInActivelogInButtonColor
+                                : Colors.grey,
                           ),
                         ),
                       ],
@@ -162,7 +184,6 @@ class _HomeState extends State<Home> {
                   )
                 ],
               )
-
             ],
           ),
         ),
