@@ -19,6 +19,9 @@ import 'package:gp_app/view/onboardingScreens/WelcomeScreen1.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gp_app/view/profile/Home.dart';
 import 'package:gp_app/view/profile/Profile.dart';
+import 'package:gp_app/view/profile/followers_grid.dart';
+import 'package:gp_app/view/profile/following.dart';
+import 'package:gp_app/view/profile/ownProfile.dart';
 
 import 'package:provider/provider.dart';
 
@@ -65,8 +68,12 @@ class MyApp extends StatelessWidget {
           // Your app THeme color , used to change drawer colour
         ),
         home: Home(),
-        initialRoute: Profile.id,
+        initialRoute: Home.id,
         routes: {
+            ownProfile.id: (context) => ownProfile(),
+          FollowersGrid.id: (context) => FollowersGrid(),
+          FollowingGrid.id: (context) => FollowingGrid(),
+
           WelcomeScreen1.id: (context) => WelcomeScreen1(),
           EditProfile.id: (context) => EditProfile(),
           ConstWelcomeScreen.id: (context) => ConstWelcomeScreen(),

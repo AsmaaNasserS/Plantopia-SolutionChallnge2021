@@ -60,12 +60,8 @@ class _MarketPlaceState extends State<MarketPlace> {
             centerTitle: true,
             backgroundColor: kInActiveBackButtonColor,
             bottom: TabBar(
-
               indicatorPadding: EdgeInsets.all(2),
               indicatorWeight: 2,
-
-
-
               unselectedLabelColor:
                   kActiveOrangeColor, // the text colour when it is not chosen
             indicatorSize: TabBarIndicatorSize.values[1],

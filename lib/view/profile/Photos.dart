@@ -19,5 +19,13 @@ List<Photos> photo=[
   ),
   Photos(
       plantImage: 'images/plant5.jpg'
+  ), Photos(
+      plantImage: 'images/plant5.jpg'
+  ), Photos(
+      plantImage: 'images/plant5.jpg'
+  ), Photos(
+      plantImage: 'images/plant5.jpg'
+  ), Photos(
+      plantImage: 'images/plant5.jpg'
   ),
 ];

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gp_app/const.dart';
 import 'package:gp_app/view/profile/Profile.dart';
+import 'package:gp_app/view/profile/ownProfile.dart';
 
 import '../expert/ExpertsList.dart';
 
@@ -26,18 +27,22 @@ class sideDrawer extends StatelessWidget {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
-        Container(
-        color: kCardColor,
-        child: UserAccountsDrawerHeader(
-          accountName: Text(" Asmaa Nasser"),
-          accountEmail: Text("asmaa98seif@gmail.com"),
-          currentAccountPicture: CircleAvatar(
+        MaterialButton(
+          padding: EdgeInsets.zero,
+          onPressed: (){Navigator.pushNamed(context,ownProfile.id);},
+          child: Container(
+          color: kCardColor,
+          child: UserAccountsDrawerHeader(
+            accountName: Text(" Asmaa Nasser"),
+            accountEmail: Text("asmaa98seif@gmail.com"),
+            currentAccountPicture: CircleAvatar(
 
-            backgroundImage: NetworkImage(
-                'https://www.dostor.org/upload/photo/news/74/4/600x338o/604.jpg'),
+              backgroundImage: NetworkImage(
+                  'https://www.dostor.org/upload/photo/news/74/4/600x338o/604.jpg'),
+            ),
           ),
-        ),
       ),
+        ),
 
       ListTile(
 

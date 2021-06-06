@@ -30,12 +30,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 flutter:
+  fonts:
+    - family:  MyFlutterApp
+      fonts:
+        - asset: images/MyFlutterApp.ttf
 
   assets:
   - images/
 
   uses-material-design: true
 
-  

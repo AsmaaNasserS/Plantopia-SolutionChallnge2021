@@ -28,7 +28,7 @@ List<Article> articles=[
   ),
 
   Article(
-      articleImage : 'images/plant.jpg',
+      articleImage : 'images/plant3.jpg',
       description: 'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
           'jhksdgdfdjbcjkhjaczxjhcbajhssbksbxjhhbcsdjkcb''\n''hjgffgjhfgfhgfghmvmvhhjjjkbb,nkkjghjj'
