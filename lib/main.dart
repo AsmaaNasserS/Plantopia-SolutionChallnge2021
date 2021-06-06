@@ -59,7 +59,6 @@ class MyApp extends StatelessWidget {
                 backgroundColor: kInActiveBackButtonColor, elevation: 0.5,
                 iconTheme:IconThemeData(color:KTextLightColour),
             foregroundColor: Colors.grey.shade700,
-
             centerTitle: true,
           ),
 
@@ -67,13 +66,12 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.grey.shade700,
           // Your app THeme color , used to change drawer colour
         ),
-        home: Home(),
-        initialRoute: Home.id,
+        home: ForgetPassword(),
+        initialRoute: ForgetPassword.id,
         routes: {
             ownProfile.id: (context) => ownProfile(),
           FollowersGrid.id: (context) => FollowersGrid(),
           FollowingGrid.id: (context) => FollowingGrid(),
-
           WelcomeScreen1.id: (context) => WelcomeScreen1(),
           EditProfile.id: (context) => EditProfile(),
           ConstWelcomeScreen.id: (context) => ConstWelcomeScreen(),
@@ -90,7 +88,8 @@ class MyApp extends StatelessWidget {
           ExpertsList.id: (context) => ExpertsList(),
 
           //NotificationScreen.id: (context) => NotificationScreen(),
-        }),);
+        }
+       ),);
   }
 }
 
