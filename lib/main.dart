@@ -66,8 +66,8 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.grey.shade700,
           // Your app THeme color , used to change drawer colour
         ),
-        home: ForgetPassword(),
-        initialRoute: ForgetPassword.id,
+        home: EditProfile(),
+        initialRoute: EditProfile.id,
         routes: {
             ownProfile.id: (context) => ownProfile(),
           FollowersGrid.id: (context) => FollowersGrid(),
