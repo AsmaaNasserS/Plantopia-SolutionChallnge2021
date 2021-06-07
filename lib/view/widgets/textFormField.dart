@@ -32,7 +32,7 @@ class DefTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLines: lines,
-      initialValue: 'hello',
+      initialValue: initialValue,
 
       style: TextStyle(
         color: Colors.grey.shade600,fontSize: 20
