@@ -11,6 +11,9 @@ class DefTextField extends StatelessWidget {
   final TextInputType type;
   final int lines;
   final bool obsecureText;
+  final bool readOnly;
+  final String initialValue;
+
 
   DefTextField(
       {this.controller,
@@ -21,12 +24,15 @@ class DefTextField extends StatelessWidget {
         this.onChanged,
       this.obsecureText = false,
       this.lines,
-      this.prefix});
+      this.prefix,
+      this.readOnly,
+      this.initialValue});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLines: lines,
+      initialValue: 'hello',
 
       style: TextStyle(
         color: Colors.grey.shade600,fontSize: 20
