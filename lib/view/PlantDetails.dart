@@ -51,13 +51,10 @@ class _PlantDetailsState extends State<PlantDetails> {
           'Spinach',
           style: kWelcomeScreensTitleText,
         ),
-        toolbarHeight: mediaQuery.height * 0.09,
+        //toolbarHeight: mediaQuery.height * 0.09,
         centerTitle: true,
         leading: IconButton(
-          icon: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Icon(Icons.arrow_back_ios_rounded, color: kTextBoldColour),
-          ),
+          icon: Icon(Icons.arrow_back_ios_rounded, color: kTextBoldColour),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
@@ -90,13 +87,13 @@ class _PlantDetailsState extends State<PlantDetails> {
                       onPressed:(){} ,
                     ),
                   ),
-                  height: mediaQuery.height * 0.25,
+                  height: mediaQuery.height * 0.30,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
                         'images/spinach.jpg',
                       ),
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),

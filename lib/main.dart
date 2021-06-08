@@ -22,9 +22,9 @@ import 'package:gp_app/view/profile/Profile.dart';
 import 'package:gp_app/view/profile/followers_grid.dart';
 import 'package:gp_app/view/profile/following.dart';
 import 'package:gp_app/view/profile/ownProfile.dart';
-
+import 'package:gp_app/view/PlantDetails.dart';
 import 'package:provider/provider.dart';
-
+import 'view/expert/CreateArticle.dart';
 import 'const.dart';
 import 'view/MarketPlaceScreens/EditProductProfile.dart';
 import 'view/MarketPlaceScreens/EditProductProfile.dart';
@@ -66,8 +66,8 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.grey.shade700,
           // Your app THeme color , used to change drawer colour
         ),
-        home: EditProfile(),
-        initialRoute: EditProfile.id,
+        home: CreateArticle(),
+        initialRoute: CreateArticle.id,
         routes: {
             ownProfile.id: (context) => ownProfile(),
           FollowersGrid.id: (context) => FollowersGrid(),
@@ -86,6 +86,8 @@ class MyApp extends StatelessWidget {
           EditProductProfile.id: (context) => EditProductProfile(),
           SearchScreen.id: (context) => SearchScreen(),
           ExpertsList.id: (context) => ExpertsList(),
+          CreateArticle.id: (context) => CreateArticle(),
+
 
           //NotificationScreen.id: (context) => NotificationScreen(),
         }

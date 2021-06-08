@@ -5,6 +5,7 @@ import 'package:gp_app/view/externalScreens/search_screen.dart';
 import 'package:gp_app/view/profile/Profile.dart';
 import 'package:gp_app/view/externalScreens/notificationsScreen.dart';
 import 'package:gp_app/view/widgets/side_drawer.dart';
+import 'package:gp_app/view/externalScreens/search_screen.dart';
 
 class Home extends StatefulWidget {
   static String id = 'Home';
@@ -89,8 +90,7 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        // currentScreen = Articles Search Screen
-
+                        currentScreen =SearchScreen();
                         currentTab = 3;
                       });
                     },
@@ -128,7 +128,6 @@ class _HomeState extends State<Home> {
                     onPressed: () {
                       setState(() {
                         currentScreen = MarketPlace();
-
                         currentTab = 2;
                       });
                     },
