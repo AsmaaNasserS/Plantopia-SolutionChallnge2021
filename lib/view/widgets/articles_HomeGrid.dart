@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../expert/Articles.dart';
 import '../expert/ArticlesCard.dart';
-import '../expert/ArticlesPage.dart';
+import '../expert/ArticlePage.dart';
 class HomeArticles extends StatelessWidget {
   const HomeArticles({
     Key key,
@@ -17,7 +17,7 @@ class HomeArticles extends StatelessWidget {
       primary: false,
       padding: const EdgeInsets.all(9.0),
       childAspectRatio: 1.3,
-      mainAxisSpacing: 10,
+      mainAxisSpacing: 9,
       crossAxisSpacing: 0,
       crossAxisCount: 1,
       scrollDirection: Axis.horizontal,
@@ -63,10 +63,11 @@ class HomeArticles extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ArticlesPage(
+                  builder: (context) => ArticlePage(
                       articleImage: articles[index].articleImage,
                       articleTitle: articles[index].title,
-                      articleDescription: articles[index].description),
+                      articleDescription: articles[index].description,
+                  author: articles[index].owner,),
                 ));
           },
         );

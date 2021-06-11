@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:gp_app/const.dart';
+import 'package:gp_app/view/MarketPlaceScreens/EditProductProfile.dart';
 import 'package:gp_app/view/widgets/side_drawer.dart';
 import 'MyStore.dart';
 import 'NearByStores.dart';
@@ -15,38 +16,6 @@ class MarketPlace extends StatefulWidget {
 
 
 class _MarketPlaceState extends State<MarketPlace> {
-  ScrollController _scrollViewController;
-  bool _showbar = true;
-  bool isScrollingDown = false;
-  @override
-  void initState() {
-    super.initState();
-    _scrollViewController = new ScrollController();
-    _scrollViewController.addListener(() {
-      if (_scrollViewController.position.userScrollDirection == ScrollDirection.reverse) {
-        if (!isScrollingDown) {
-          isScrollingDown = true;
-          _showbar = false;
-          setState(() {});
-        }
-      }
-
-      if (_scrollViewController.position.userScrollDirection == ScrollDirection.forward) {
-        if (isScrollingDown) {
-          isScrollingDown = false;
-          _showbar = true;
-          setState(() {});
-        }
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _scrollViewController.dispose();
-    _scrollViewController.removeListener(() {});
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +25,13 @@ class _MarketPlaceState extends State<MarketPlace> {
           drawer: sideDrawer(),
 
           appBar: AppBar(
+            actions: [
+              IconButton(icon: Icon(Icons.add_business_outlined, size: 30,), onPressed: (){
+                Navigator.pushNamed(context, EditProductProfile.id);
+                //todo: add plant method
+
+              })
+            ],
             elevation: 0,
             centerTitle: true,
             backgroundColor: kInActiveBackButtonColor,

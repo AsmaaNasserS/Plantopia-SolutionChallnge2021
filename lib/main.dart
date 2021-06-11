@@ -7,6 +7,7 @@ import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
 import 'package:gp_app/view/MarketPlaceScreens/MyStore.dart';
 import 'package:gp_app/view/MarketPlaceScreens/NearByStores.dart';
 import 'package:gp_app/view/MarketPlaceScreens/ProductDetails.dart';
+import 'package:gp_app/view/PlantDetails.dart';
 import 'package:gp_app/view/externalScreens/notificationsScreen.dart';
 import 'package:gp_app/view/externalScreens/search_screen.dart';
 import 'package:gp_app/view/login_regestration/ForgetPassword.dart';
@@ -19,6 +20,7 @@ import 'package:gp_app/view/onboardingScreens/WelcomeScreen1.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gp_app/view/profile/Home.dart';
 import 'package:gp_app/view/profile/Profile.dart';
+import 'package:gp_app/view/profile/articles_List_View.dart';
 import 'package:gp_app/view/profile/followers_grid.dart';
 import 'package:gp_app/view/profile/following.dart';
 import 'package:gp_app/view/profile/ownProfile.dart';
@@ -72,6 +74,8 @@ class MyApp extends StatelessWidget {
             ownProfile.id: (context) => ownProfile(),
           FollowersGrid.id: (context) => FollowersGrid(),
           FollowingGrid.id: (context) => FollowingGrid(),
+
+          PlantDetails.id: (context) => PlantDetails(),
           WelcomeScreen1.id: (context) => WelcomeScreen1(),
           EditProfile.id: (context) => EditProfile(),
           ConstWelcomeScreen.id: (context) => ConstWelcomeScreen(),
@@ -80,6 +84,7 @@ class MyApp extends StatelessWidget {
           ForgetPassword.id: (context) => ForgetPassword(),
           ResetPassword.id: (context) => ResetPassword(),
           PasswordUpdated.id: (context) => PasswordUpdated(),
+
           MyStore.id: (context) => MyStore(),
           NearBy.id: (context) => NearBy(),
           ProductDetails.id: (context)=> ProductDetails(),
@@ -88,6 +93,8 @@ class MyApp extends StatelessWidget {
           ExpertsList.id: (context) => ExpertsList(),
           CreateArticle.id: (context) => CreateArticle(),
 
+
+          ArticlesListView.id: (context) => ArticlesListView(),
 
           //NotificationScreen.id: (context) => NotificationScreen(),
         }

@@ -30,6 +30,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //  resizeToAvoidBottomInset: false,
+
       drawer: sideDrawer(),
       body: PageStorage(
         child: currentScreen,
@@ -45,6 +47,7 @@ class _HomeState extends State<Home> {
           onPressed: () {}),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
+
         color: kInActiveBackButtonColor,
         elevation: 0,
         shape: CircularNotchedRectangle(),
