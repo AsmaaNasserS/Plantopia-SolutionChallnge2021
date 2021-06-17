@@ -89,16 +89,18 @@ class ReusableCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        children: [
-          Icon(
-            iconName,
-            color: iconColor,
-            size: 30,
-          ),
-          Text(text,
-              style: kCardTextDescription),
-        ],
+      child: Center(
+        child: Column(
+          children: [
+            Icon(
+              iconName,
+              color: iconColor,
+              size: 30,
+            ),
+            Text(text,
+                style: kCardTextDescription),
+          ],
+        ),
       ),
     );
   }

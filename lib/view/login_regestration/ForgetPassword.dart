@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_app/view/login_regestration/SignUp.dart';
 import '../../const.dart';
 import 'Login.dart';
 import 'ResetPassword.dart';
+import 'package:gp_app/view/widgets/textFormField.dart';
 
 class ForgetPassword extends StatefulWidget {
   static String id = "ForgetPassword";
@@ -9,57 +12,71 @@ class ForgetPassword extends StatefulWidget {
   @override
   _ForgetPasswordState createState() => _ForgetPasswordState();
 }
+//final _emailController = TextEditingController();
 
 class _ForgetPasswordState extends State<ForgetPassword> {
+  createAlertDialog(BuildContext context){
+    return showDialog(context: context , builder: (context){
+      return AlertDialog(
+        title: Center(child: Text("Please check your mail")),
+        //content:Text("Resend a mail ?") ,
+        actions: [
+          FlatButton(onPressed:(){ Navigator.pop(context);}, child: Text('Done'),),
+          FlatButton(onPressed:(){}, child: Text('Resend?'),),
+        ],
+      );
+    });
+  }
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
-      //resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 25.0),
+          padding: EdgeInsets.symmetric(vertical: mediaQuery.height * 0.18, horizontal: mediaQuery.width * 0.07),
+          color: kBackgroundColor,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            //mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text('Forget your password? ', style: kWelcomeScreensTitleText),
-              SizedBox(height: 40.0),
-              Text('An email with the reset link will be sent to your email.',
-                  style: kWelcomeScreensDescriptionText),
-              SizedBox(height: 50.0),
-              TextField(
-                decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.email,
-                    size: 20,
-                    color: kActiveBackButtonColor,
-                  ),
-                  labelText: 'Email',
-                  labelStyle: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.grey),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green),
-                  ),
-                ),
+              Text('Forgot your Password?', style: kWelcomeScreensTitleText),
+              SizedBox(height: mediaQuery.height * 0.02),
+              Text('Please enter your email and we will send you a link to return to your account',
+                  textAlign: TextAlign.center,
+                  style: kTextDescription),
+              // 'An email with the reset link will be sent to your email.'
+              SizedBox(height: mediaQuery.height * 0.15),
+
+              DefTextField(
+                label: 'Enter your email',
+                validator: (value) {
+                  if (!value.contains('@') || value.isEmpty)
+                    return 'please enter a valid e-mail';
+                  return null;
+                },
+                type: TextInputType.emailAddress,
+                prefix: Icons.email,
+                //controller: _emailController,
+                submit: (value) {
+                 // _emailController.text = value;
+                },
               ),
-              SizedBox(height: 180.0),
+              SizedBox(height: mediaQuery.height * 0.10),
               Container(
-                height: 50.0,
+                height: mediaQuery.height * 0.07,
                 child: GestureDetector(
                   onTap: () {
+                    createAlertDialog(context);
                     ///* TODO SUBMIT TO FORGET PASSWORD *////
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ResetPassword()),
-                    );
-
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => ResetPassword()),
+                    // );
                     ///* TODO ONCLICK CHANGE COLOR *////
                   },
                   child: Material(
                     borderRadius: BorderRadius.circular(20.0),
-                    //   shadowColor: Colors.greenAccent,
                     color: kInActivelogInButtonColor,
-
-                    //   elevation: 12.0,
                     child: Center(
                       child: Text(
                         'Submit',
@@ -73,42 +90,37 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   ),
                 ),
               ),
-              SizedBox(height: 120.0),
-              Center(
-                child: Container(
-                    alignment: Alignment.centerRight,
-                    padding: EdgeInsets.only(top: 15.0, left: 100.0),
-                    child: Row(children: <Widget>[
-                      Text(
-                        "Already a member! ",
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          ///*done TODO  GO TO Sign IN  */////
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Login()),
-                          );
-                          //  color: Colors.green;
-                        },
-                        child: Text(
-                          'Sign in',
-                          style: TextStyle(
-                              color: Colors.green,
-                              fontWeight: FontWeight.bold,
-                              // fontFamily: 'Cabin',
-                              decoration: TextDecoration.underline),
-                        ),
-                      ),
-                    ])),
-              )
+              SizedBox(height: mediaQuery.height * 0.10),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                Text(
+                  "Don't have an account ? ",
+                  style: kTextDescription,
+                ),
+                InkWell(
+                  onTap: () {
+                    ///*done TODO  GO TO Sign IN  */////
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUp()),
+                    );
+                  },
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold,
+                        // fontFamily: 'Cabin',
+                        decoration: TextDecoration.underline),
+                  ),
+                ),
+              ])
             ],
           ),
         ),
       ),
     );
   }
+
 }

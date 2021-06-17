@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:gp_app/service/Garden.dart';
+import 'package:gp_app/view/profile/garden_view.dart';
 import 'package:gp_app/view/widgets/Appicon.dart';
 
 import 'package:gp_app/const.dart';
@@ -80,7 +82,7 @@ class _ownProfileState extends State<ownProfile> {
                 automaticallyImplyLeading: false,
                 floating: true,
                 // backwardsCompatibility: false,
-                snap: true,
+                //snap: true,
                 // forceElevated: true,
 //stretch: true,
                 pinned: true,
@@ -249,7 +251,7 @@ class _ownProfileState extends State<ownProfile> {
               ),
             ),
             Expanded(
-              child: MyStore(),
+              child: GardenView(),
             )
           ]),
         ),

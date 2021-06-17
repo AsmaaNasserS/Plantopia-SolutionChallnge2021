@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../../const.dart';
-import 'ArticlesPage.dart';
+import 'ArticlePage.dart';
 import 'ExpertCard.dart';
 import 'package:gp_app/view/expert/ArticlesCard.dart';
 import 'package:gp_app/view/expert/Articles.dart';
@@ -184,7 +184,7 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ArticlesPage(articleImage:articles[index].articleImage , articleTitle:articles[index].title , articleDescription:articles[index].description),
+                              builder: (context) => ArticlePage(articleImage:articles[index].articleImage , articleTitle:articles[index].title , articleDescription:articles[index].description),
                             ));
                       },
                     );

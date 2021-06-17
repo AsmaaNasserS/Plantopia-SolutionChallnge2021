@@ -10,6 +10,7 @@ import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
 import 'package:gp_app/view/MarketPlaceScreens/MyStore.dart';
 import 'package:gp_app/view/MarketPlaceScreens/NearByStores.dart';
 import 'package:gp_app/view/MarketPlaceScreens/ProductDetails.dart';
+import 'package:gp_app/view/PlantDetails.dart';
 import 'package:gp_app/view/externalScreens/notificationsScreen.dart';
 import 'package:gp_app/view/externalScreens/search_screen.dart';
 import 'package:gp_app/view/login_regestration/ForgetPassword.dart';
@@ -22,10 +23,17 @@ import 'package:gp_app/view/onboardingScreens/WelcomeScreen1.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gp_app/view/profile/Home.dart';
 import 'package:gp_app/view/profile/Profile.dart';
+import 'package:gp_app/view/profile/articles_List_View.dart';
 import 'package:gp_app/view/profile/followers_grid.dart';
 import 'package:gp_app/view/profile/following.dart';
 import 'package:gp_app/view/profile/ownProfile.dart';
+<<<<<<< HEAD
 import 'package:provider/provider.dart';
+=======
+import 'package:gp_app/view/PlantDetails.dart';
+import 'package:provider/provider.dart';
+import 'view/expert/CreateArticle.dart';
+>>>>>>> c83a391da9fcc3051c08e2d6f42315aa743c1851
 import 'const.dart';
 import 'identification_part/networking/bloc_observer.dart';
 import 'identification_part/networking/cubit_bloc.dart';
@@ -69,7 +77,6 @@ class MyApp extends StatelessWidget {
                 backgroundColor: kInActiveBackButtonColor, elevation: 0.5,
                 iconTheme:IconThemeData(color:KTextLightColour),
             foregroundColor: Colors.grey.shade700,
-
             centerTitle: true,
           ),
 
@@ -84,6 +91,7 @@ class MyApp extends StatelessWidget {
           FollowersGrid.id: (context) => FollowersGrid(),
           FollowingGrid.id: (context) => FollowingGrid(),
 
+          PlantDetails.id: (context) => PlantDetails(),
           WelcomeScreen1.id: (context) => WelcomeScreen1(),
           EditProfile.id: (context) => EditProfile(),
           ConstWelcomeScreen.id: (context) => ConstWelcomeScreen(),
@@ -92,15 +100,21 @@ class MyApp extends StatelessWidget {
           ForgetPassword.id: (context) => ForgetPassword(),
           ResetPassword.id: (context) => ResetPassword(),
           PasswordUpdated.id: (context) => PasswordUpdated(),
+
           MyStore.id: (context) => MyStore(),
           NearBy.id: (context) => NearBy(),
           ProductDetails.id: (context)=> ProductDetails(),
           EditProductProfile.id: (context) => EditProductProfile(),
           SearchScreen.id: (context) => SearchScreen(),
           ExpertsList.id: (context) => ExpertsList(),
+          CreateArticle.id: (context) => CreateArticle(),
+
+
+          ArticlesListView.id: (context) => ArticlesListView(),
 
           //NotificationScreen.id: (context) => NotificationScreen(),
-        }),);
+        }
+       ),);
   }
 }
 

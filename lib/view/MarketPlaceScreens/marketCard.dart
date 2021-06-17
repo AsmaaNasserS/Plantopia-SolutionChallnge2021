@@ -94,7 +94,35 @@ class MarketCard extends StatelessWidget {
                           padding: EdgeInsets.all(3),
                           constraints: BoxConstraints(
                               minWidth:24,minHeight: 24),
-                          onPressed: () {},
+                          onPressed:  () {
+                            showDialog<String>(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                  title: Text('Delete Product'),
+                                  content: Text(
+                                    'Are you sure you want to delete this product',
+                                    style: TextStyle(fontSize: 18),
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        ///todo:delete plant from garden
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        'Delete',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                    ),
+                                    TextButton(
+                                        onPressed: () => Navigator.pop(context, 'Cancel'),
+                                        child: Text(
+                                          'Cancel',
+                                          style: TextStyle(fontSize: 20, color: Colors.grey),
+                                        ))
+                                  ],
+                                ));
+                          },
                           shape: CircleBorder(),
                           child: Icon(
                             Icons.delete_outlined,

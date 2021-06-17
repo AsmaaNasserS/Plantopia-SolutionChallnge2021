@@ -11,23 +11,29 @@ class DefTextField extends StatelessWidget {
   final TextInputType type;
   final int lines;
   final bool obsecureText;
+  final bool readOnly;
+  final String initialValue;
+
 
   DefTextField(
       {this.controller,
       @required this.label,
-  this.validator,
+      this.validator,
       @required this.type,
       this.submit,
-        this.onChanged,
+      this.onChanged,
       this.obsecureText = false,
       this.lines,
-      this.prefix});
+      this.prefix,
+      this.readOnly,
+      this.initialValue,
+      });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLines: lines,
-
+      initialValue: initialValue,
       style: TextStyle(
         color: Colors.grey.shade600,fontSize: 20
       ),

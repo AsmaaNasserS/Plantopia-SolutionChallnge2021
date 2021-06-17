@@ -31,16 +31,16 @@ class _MyStoreState extends State<MyStore> {
           child: Center(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: SmallButton(
-                    nav: () {
-                      Navigator.pushNamed(context, EditProductProfile.id);
-                    },
-                    btntext: 'Add new product',
-                    icon: Icons.add,
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(20.0),
+                //   child: SmallButton(
+                //     nav: () {
+                //       Navigator.pushNamed(context, EditProductProfile.id);
+                //     },
+                //     btntext: 'Add new product',
+                //     icon: Icons.add,
+                //   ),
+                // ),
                 Column(
                   children: List.generate(
                     5,

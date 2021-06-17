@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gp_app/const.dart';
 import 'package:gp_app/view/widgets/textFormField.dart';
@@ -17,63 +18,27 @@ class NearBy extends StatefulWidget {
 class _NearByState extends State<NearBy> {
   @override
   Widget build(BuildContext context) {
+    var searchKey = GlobalKey<FormState>();
     final _searchController = TextEditingController();
     final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(mediaQuery.height * .002),
-          child: Container(
-            //  padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.grey[300],
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Material(
-                color: Colors.grey[300],
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(right: 8.0),
-                      child: Icon(
-                        Icons.search,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    Expanded(
-                      child: DefTextField(
-                        type: TextInputType.text,
-                        label: 'search',
-                        onChanged:(){} ,
-                        controller: _searchController,
-                        prefix: Icons.search_rounded,
+        backgroundColor: kInActiveBackButtonColor,
+        bottom:PreferredSize(
 
-                        //cursorColor: Colors.grey,
-                        // decoration: InputDecoration.collapsed(
-                        //   hintText: ' Search by name or address',
-                        //   hintStyle: kLightText.copyWith(fontSize: 17),
-                        ),
+          preferredSize: Size.fromHeight(mediaQuery.height * .02),
 
-                      ),
+          key: searchKey ,
+          child: Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10), child: DefTextField(
 
-                    InkWell(
-                      child: Icon(
-                        Icons.mic,
-                        color: Colors.grey,
-                      ),
-                      onTap: () {},
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
+            label: 'Search',
+            prefix: Icons.search_rounded,
+            type: TextInputType.text,
+
+          ),),
+
+        ) ,
         elevation: 0,
-        backgroundColor: Colors.grey[300],
         centerTitle: false,
       ),
       body: SingleChildScrollView(

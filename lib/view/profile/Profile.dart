@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,10 +10,11 @@ import 'package:gp_app/service/Users.dart';
 import 'package:gp_app/service/authentication.dart';
 import 'package:gp_app/view/expert/Articles.dart';
 import 'package:gp_app/view/expert/ArticlesCard.dart';
-import 'package:gp_app/view/expert/ArticlesPage.dart';
+import 'package:gp_app/view/expert/ArticlePage.dart';
 import 'package:gp_app/view/profile/Listprofile.dart';
+import 'package:gp_app/view/profile/articles_List_View.dart';
 import 'package:gp_app/view/profile/postcard.dart';
-import 'package:gp_app/view/widgets/articles_view.dart';
+import 'package:gp_app/view/widgets/articles_HomeGrid.dart';
 import 'package:gp_app/view/widgets/side_drawer.dart';
 import 'package:provider/provider.dart';
 import '../../const.dart';
@@ -40,7 +43,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
     Widget article = Container(
-      height: mediaQuery.height * .24,
+      height: mediaQuery.height * .22,
       child: HomeArticles(mediaQuery: mediaQuery),
     );
 
@@ -71,7 +74,7 @@ class _ProfileState extends State<Profile> {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Container(
-              padding: EdgeInsets.symmetric(vertical: 20),
+              padding: EdgeInsets.only(top: 20, ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,14 +88,21 @@ class _ProfileState extends State<Profile> {
                       color: KTextLightColour,
                     ),
                   ),
-                  FlatButton(
-                    padding: EdgeInsets.only(left: 12),
-                    onPressed: () {},
+                  TextButton(
+                    //padding: EdgeInsets.only(left: 12),
+                    onPressed: () {
+                      Navigator.pushNamed(context, ArticlesListView.id);
+
+                    },
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
+
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text('all articles'),
-                        Icon(Icons.navigate_next)
+                        Text('All articles',style: TextStyle(decoration: TextDecoration.underline,fontSize: 18.00,
+                          fontWeight: FontWeight.bold,
+                          color: KTextLightColour,),),
+                        Icon(Icons.navigate_next, color: KTextLightColour)
                       ],
                     ),
                   ),

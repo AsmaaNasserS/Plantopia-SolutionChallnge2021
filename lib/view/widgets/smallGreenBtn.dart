@@ -1,5 +1,6 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import '../../const.dart';
 
@@ -27,11 +28,12 @@ class SmallButton extends StatelessWidget {
       onPressed: nav,
 
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
 
         children: [
           if (icon != null)
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 0.0),
+              padding: EdgeInsets.symmetric(horizontal: 5.0),
               child: Icon(
                 icon,
                 color: Colors.white,
