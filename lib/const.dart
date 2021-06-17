@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+
 
 const kInActivelogInButtonColor = Color(0xFF00B761); // login + get started + sign up + any green button
+//
 const kActivelogInButtonColor = Color(0xFF0B9755); // login + get started + sign up + any green button
 
 const kInActiveBackButtonColor = Color(0xFFEBEBEB); // or any grey button
@@ -16,9 +20,18 @@ const kButtonTextColour =  Color(0xFFF8F8F8);
 
 const kBackgroundColor = Color(0xFFF8F8F8); // the app background shades
 const kCardColor = Color(0xFFFFFFFF); // Market card and anysimilar compononet
-
+//
 const kTextBoldColour = Color(0xFF6E6E6E); // for the titles in the screens
 const KTextLightColour = Color(0xFF727272); // subtitles and body text
+
+
+
+const kHeadlineTextColorStyle = TextStyle(
+color: Colors.black,
+fontSize: 16,
+fontWeight: FontWeight.bold
+);
+
 
 const klogInButtonTextStyle = TextStyle(
   fontSize:18.00,
@@ -83,3 +96,56 @@ const kExpertsDescriptionTexts = TextStyle(
   color: Colors.black,
 );
 
+
+
+void navigateTo(context, widget) => Navigator.push(
+    context, MaterialPageRoute(builder: (context) => widget));
+
+
+Widget kHeadlineIcon({IconData icon, double size, Color color = kActivelogInButtonColor}) => Icon(
+  icon,
+  color: color,
+  size: size,
+);
+
+Widget plantTaxonomy(
+{
+  final String label,
+  final String taxonomy,
+
+}) =>Column(
+  children: [
+    Row(
+      children: [
+        Text(label,
+            style: taxonomyLabelStyle),
+        SizedBox(width: 50),
+        Text(taxonomy,
+            style: taxonomyPlantTextStyle),
+      ],
+    ),
+    Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Container(
+        height: 1,
+        width: double.infinity,
+        color: Colors.grey.shade400,
+      ),
+    ),
+  ],
+);
+
+
+
+const taxonomyPlantTextStyle = TextStyle(
+    color: Colors.black,
+    fontSize: 16,
+    fontStyle: FontStyle.italic,
+    fontWeight: FontWeight.bold
+);
+
+const taxonomyLabelStyle =TextStyle(
+    color: KTextLightColour,
+    fontSize: 15,
+    //fontWeight: FontWeight.bold
+);

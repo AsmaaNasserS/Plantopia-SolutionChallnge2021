@@ -1,0 +1,65 @@
+{
+
+  "images": [
+    {
+      "file_name": "b984e5c86adc4a7b9592a6291e2ae264.jpg",
+      "url": "https: //plant.id/media/images/b984e5c86adc4a7b9592a6291e2ae264.jpg"
+    }
+  ],
+  "suggestions": [
+    {
+
+      "plant_name": "Taraxacum officinale",
+      "plant_details": {
+        "wiki_description": {
+          "value": "Taraxacum officinale, the common dandelion is...",
+          "citation": "http: //en.wikipedia.org/wiki/Taraxacum_officinale",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https: //creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "taxonomy": {
+          "kingdom": "Plantae",
+          "phylum": "Tracheophyta",
+          "class": "Magnoliopsida",
+          "order": "Asterales",
+          "family": "Asteraceae",
+          "genus": "Taraxacum"
+        },
+        "synonyms": [
+          "Taraxacum kok-saghyz",
+          "..."
+        ],
+        "gbif_id": "5394163",
+        "edible_parts": [
+          "flowers",
+          "leaves"
+        ],
+        "propagation_methods": [
+          "division",
+          "seeds"
+        ],
+      },
+      "probability": 0.40959510325000664,
+      "similar_images": [
+        {
+          "id": "d7066da4d2897d9cf9ef2fdcd51afb89",
+          "similarity": 0.9362026169394976,
+          "url": "https: //storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Taraxacum officinale/d7066da4d2897d9cf9ef2fdcd51afb89.jpg",
+          "url_small": "https: //storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Taraxacum officinale/d7066da4d2897d9cf9ef2fdcd51afb89.small.jpg"
+        },
+        {
+          "id": "632b1c7798823717e1476c4e6c3970da",
+          "similarity": 0.11497044861330177,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/20210221.efnB4/images/632/b1c7798823717e1476c4e6c3970da.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/20210221.efnB4/images/632/b1c7798823717e1476c4e6c3970da.small.jpg",
+          "citation": "Yann Fichet",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ]
+    },
+  ],
+
+
+
+}

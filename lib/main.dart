@@ -1,5 +1,8 @@
+import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gp_app/identification_part/identifcationscreen.dart';
 import 'package:gp_app/service/authentication.dart';
 import 'package:gp_app/view/EditProfile.dart';
 import 'package:gp_app/view/MarketPlaceScreens/EditProductProfile.dart';
@@ -22,10 +25,12 @@ import 'package:gp_app/view/profile/Profile.dart';
 import 'package:gp_app/view/profile/followers_grid.dart';
 import 'package:gp_app/view/profile/following.dart';
 import 'package:gp_app/view/profile/ownProfile.dart';
-
 import 'package:provider/provider.dart';
-
 import 'const.dart';
+import 'identification_part/networking/bloc_observer.dart';
+import 'identification_part/networking/cubit_bloc.dart';
+import 'identification_part/networking/dio_helper.dart';
+import 'identification_part/plant_results/plant_result.dart';
 import 'view/MarketPlaceScreens/EditProductProfile.dart';
 import 'view/MarketPlaceScreens/EditProductProfile.dart';
 import 'view/expert/ExpertsList.dart';
@@ -34,6 +39,8 @@ import 'view/login_regestration/Login.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = MyBlocObserver(); // Track Cubit Bloc
+  DioHelper.init();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
@@ -46,6 +53,9 @@ class MyApp extends StatelessWidget {
           Provider<AuthenticationService>(
             create: (_) => AuthenticationService(FirebaseAuth.instance),
           ),
+          BlocProvider(
+          create: (context) => IdentificationCubit()),
+
           StreamProvider(
             create: (context) =>
             context

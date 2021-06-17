@@ -1,5 +1,8 @@
 import 'package:gp_app/const.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_app/identification_part/identifcationscreen.dart';
+import 'package:gp_app/identification_part/networking/cubit_bloc.dart';
+import 'package:gp_app/identification_part/plant_results/plant_result.dart';
 import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
 import 'package:gp_app/view/externalScreens/search_screen.dart';
 import 'package:gp_app/view/profile/Profile.dart';
@@ -41,7 +44,11 @@ class _HomeState extends State<Home> {
             Icons.camera_alt_outlined,
             size: 35,
           ),
-          onPressed: () {}),
+          onPressed: () {
+             {
+               navigateTo(context, IdentificationScreen());
+             };
+          }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         color: kInActiveBackButtonColor,
