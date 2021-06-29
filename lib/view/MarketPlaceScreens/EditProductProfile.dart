@@ -175,7 +175,7 @@ class _EditProductProfileState extends State<EditProductProfile> {
                       Expanded( // width: mediaQuery.width * 0.4,
                         // height: mediaQuery.height * 0.07,
                         child: DefTextField(
-                          label: 'Enter the Price',
+                          label: 'Price',
                           type: TextInputType.number,
                           validator: (value) {
                             if (value.isEmpty) return 'please enter the price';

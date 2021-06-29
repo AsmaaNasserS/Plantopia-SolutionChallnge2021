@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -203,33 +205,36 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
-          return SingleChildScrollView(
-            child: Container(
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                children: <Widget>[
-                  TableCalendar(
-                    rowHeight: 40,
-                    calendarController: _controller,
-                  ),
-                  ButtonTheme(
-                      buttonColor: Colors.green,
-                      minWidth: 100.0,
-                      height: 50.0,
-                      child: RaisedButton(
-                        onPressed: () {
-                          _thankYouPopUp(context);
-                        },
-                        child: Text(
-                          "submit",
-                          style: klogInButtonTextStyle,
-                        ),
-                        shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(30.0),
-                        ),
-                      ))
-                ],
-              ),
+          return Container(
+            height: MediaQuery.of(context).size.height*.5,
+            child: Column(
+              children: <Widget>[
+                TableCalendar(
+
+                  weekendDays: [DateTime.saturday, DateTime.friday],
+                  availableGestures: AvailableGestures.none,
+                  //holidays: {:},
+
+                  rowHeight: 40,
+                  calendarController: _controller,
+                ),
+                ButtonTheme(
+                    buttonColor: Colors.green,
+                    minWidth: 100.0,
+                    height: 50.0,
+                    child: RaisedButton(
+                      onPressed: () {
+                        _thankYouPopUp(context);
+                      },
+                      child: Text(
+                        "submit",
+                        style: klogInButtonTextStyle,
+                      ),
+                      shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(30.0),
+                      ),
+                    ))
+              ],
             ),
           );
         });
@@ -239,26 +244,24 @@ class _ExpertsProfileState extends State<ExpertsProfile> {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
-          return SingleChildScrollView(
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 25.0),
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    "Thank you",
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 20),
-                  Text("your submission has been recorded"),
-                  SizedBox(height: 15),
-                  Icon(
-                    FontAwesomeIcons.check,
-                    color: Colors.green,
-                    size: 40,
-                  ),
-                ],
-              ),
+          return Container(
+            padding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 25.0),
+            height: MediaQuery.of(context).size.height * .5,
+            child: Column(
+              children: <Widget>[
+                Text(
+                  "Thank you",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 20),
+                Text("your submission has been recorded"),
+                SizedBox(height: 15),
+                Icon(
+                  FontAwesomeIcons.check,
+                  color: Colors.green,
+                  size: 40,
+                ),
+              ],
             ),
           );
         });

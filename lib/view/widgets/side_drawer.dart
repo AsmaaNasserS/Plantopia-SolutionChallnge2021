@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gp_app/const.dart';
+import 'package:gp_app/view/MarketPlaceScreens/OrderScreen.dart';
 import 'package:gp_app/view/profile/Profile.dart';
 import 'package:gp_app/view/profile/ownProfile.dart';
 
@@ -48,8 +49,9 @@ class sideDrawer extends StatelessWidget {
 
           leading: Icon(Icons.home, color:  ModalRoute.of(context).settings.name == Profile.id ?
       kInActivelogInButtonColor: Colors.grey.shade600), title: Text("Home"),
-    onTap: () {
-    Navigator.pop(context);
+    onTap: () {Navigator.pop(context);
+            Navigator.pushNamed(context, ownProfile.id);
+
     },
     ),
     ListTile(
@@ -74,9 +76,10 @@ class sideDrawer extends StatelessWidget {
     },
     ),
     ListTile(
-    leading: Icon(Icons.calendar_today), title: Text("My Calendar "),
+    leading: Icon(Icons.shopping_basket_outlined), title: Text("Orders "),
     onTap: () {
     Navigator.pop(context);
+    Navigator.pushNamed(context, OrdersScreen.id);
     },
     ),
     ListTile(

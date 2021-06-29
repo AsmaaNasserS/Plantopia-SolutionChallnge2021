@@ -3,16 +3,16 @@ import 'package:flutter/widgets.dart';
 
 
 
-<<<<<<< HEAD
+
 const kInActivelogInButtonColor = Color(0xFF00B761); // login + get started + sign up + any green button
 //
 const kActivelogInButtonColor = Color(0xFF0B9755); // login + get started + sign up + any green button
-=======
-const kInActivelogInButtonColor =
-    Color(0xFF00B761); // login + get started + sign up + any green button
-const kActivelogInButtonColor =
-    Color(0xFF0B9755); // login + get started + sign up + any green button
->>>>>>> c83a391da9fcc3051c08e2d6f42315aa743c1851
+//=======
+// const kInActivelogInButtonColor =
+//     Color(0xFF00B761); // login + get started + sign up + any green button
+// const kActivelogInButtonColor =
+//     Color(0xFF0B9755); // login + get started + sign up + any green button
+// c83a391da9fcc3051c08e2d6f42315aa743c1851
 
 const kInActiveBackButtonColor = Color(0xFFEBEBEB); // or any grey button
 const kActiveBackButtonColor = Color(0xFFD5D5D5);
@@ -102,7 +102,7 @@ const kExpertsDescriptionTexts = TextStyle(
   color: Colors.black,
 );
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 
 void navigateTo(context, widget) => Navigator.push(
@@ -156,7 +156,7 @@ const taxonomyLabelStyle =TextStyle(
     fontSize: 15,
     //fontWeight: FontWeight.bold
 );
-=======
+//=======
 const kButtonLightText = TextStyle(
   fontSize: 18.00,
   fontWeight: FontWeight.w600,
@@ -180,4 +180,4 @@ const kArticleTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(15.0)),
   ),
 );
->>>>>>> c83a391da9fcc3051c08e2d6f42315aa743c1851
+//>>>>>>> c83a391da9fcc3051c08e2d6f42315aa743c1851
