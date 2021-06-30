@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:gp_app/const.dart';
 import 'package:gp_app/view/widgets/labelledCard.dart';
 
@@ -15,6 +16,7 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   bool confirmed = false;
+  int _quantity = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -97,9 +99,54 @@ class _ProductDetailsState extends State<ProductDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text('Quantity'),
+                          Text('Quantity', style: kWelcomeScreensTitleText.copyWith(fontSize: 18),),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              RawMaterialButton(
+                                constraints: BoxConstraints(maxWidth: 35, maxHeight: 35),
+                                elevation: 0,
 
+                                onPressed: () {
+                                  setState(() {
+                                    if ( !confirmed && _quantity!=0 )
+                                      _quantity--;
+
+                                  });
+                                },
+                                fillColor: confirmed? Colors.grey.shade400: kInActivelogInButtonColor,
+                                child: Icon(
+                                  Icons.remove,
+                                  color: Colors.white,
+                                  size: 15.0,
+                                ),
+                                padding: EdgeInsets.all(5.0),
+                                shape: CircleBorder(),
+                              ),
+                               Container(margin: EdgeInsets.all(10),child: Text( _quantity.toString(), style: kWelcomeScreensTitleText.copyWith(fontSize: 18),)),
+
+                              RawMaterialButton(
+                                constraints: BoxConstraints(maxWidth: 40, maxHeight: 40),
+                                elevation: 0,
+                                onPressed: () {
+                                  setState(() {
+                                    if (!confirmed) _quantity++;
+                                  });
+                                },
+                                fillColor: confirmed? Colors.grey.shade400: kInActivelogInButtonColor,
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                  size: 15.0,
+                                ),
+                                padding: EdgeInsets.all(5.0),
+                                shape: CircleBorder(),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                       SizedBox(
@@ -113,11 +160,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                       SizedBox(
                         height: mediaQuery.height * .02,
                       ),
-                      LabelledCard(
-                        label: 'Important notes',
-                        details:
-                            'This is seeds for the plant sunflower,do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  ',
-                      ),
+                      // LabelledCard(
+                      //   label: 'Important notes',
+                      //   details:
+                      //       'This is seeds for the plant sunflower,do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  ',
+                      // ),
                     ],
                   )
                 ],
@@ -206,7 +253,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                         SnackBar(
                           duration: Duration(milliseconds: 1500),
                           behavior: SnackBarBehavior.floating,
-                          content: Text('Your order has been confirmed successfully'),
+                          content: Text(
+                              'Your order has been confirmed successfully'),
                         ),
                       );
                       setState(() {

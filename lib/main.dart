@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_app/identification_part/identifcationscreen.dart';
@@ -75,12 +76,14 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
             debugShowCheckedModeBanner: false,
           theme: new ThemeData(
+            fontFamily: 'Cabin',
             appBarTheme: AppBarTheme(
                 backgroundColor: kInActiveBackButtonColor, elevation: 0.5,
                 iconTheme:IconThemeData(color:KTextLightColour),
 
             foregroundColor: Colors.grey.shade700,
             centerTitle: true,
+
           ),
 
           primarySwatch: Colors.green,
