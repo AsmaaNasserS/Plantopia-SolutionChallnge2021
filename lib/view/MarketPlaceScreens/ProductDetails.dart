@@ -1,9 +1,22 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:gp_app/const.dart';
 import 'package:gp_app/view/widgets/labelledCard.dart';
 
-class ProductDetails extends StatelessWidget {
+import 'ConfirmPage.dart';
+
+class ProductDetails extends StatefulWidget {
   static String id = "ProductDetails";
+
+  @override
+  _ProductDetailsState createState() => _ProductDetailsState();
+}
+
+class _ProductDetailsState extends State<ProductDetails> {
+  bool confirmed = false;
+  int _quantity = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +80,7 @@ class ProductDetails extends StatelessWidget {
                                 'Seller Name  ',
                                 softWrap: true,
                                 style: kBodyTextColour.copyWith(
-                                    color: Colors.grey.shade500),
+                                    color: kInActivelogInButtonColor),
                               ),
                             ),
                           ),
@@ -85,6 +98,57 @@ class ProductDetails extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('Quantity', style: kWelcomeScreensTitleText.copyWith(fontSize: 18),),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              RawMaterialButton(
+                                constraints: BoxConstraints(maxWidth: 35, maxHeight: 35),
+                                elevation: 0,
+
+                                onPressed: () {
+                                  setState(() {
+                                    if ( !confirmed && _quantity!=0 )
+                                      _quantity--;
+
+                                  });
+                                },
+                                fillColor: confirmed? Colors.grey.shade400: kInActivelogInButtonColor,
+                                child: Icon(
+                                  Icons.remove,
+                                  color: Colors.white,
+                                  size: 15.0,
+                                ),
+                                padding: EdgeInsets.all(5.0),
+                                shape: CircleBorder(),
+                              ),
+                               Container(margin: EdgeInsets.all(10),child: Text( _quantity.toString(), style: kWelcomeScreensTitleText.copyWith(fontSize: 18),)),
+
+                              RawMaterialButton(
+                                constraints: BoxConstraints(maxWidth: 40, maxHeight: 40),
+                                elevation: 0,
+                                onPressed: () {
+                                  setState(() {
+                                    if (!confirmed) _quantity++;
+                                  });
+                                },
+                                fillColor: confirmed? Colors.grey.shade400: kInActivelogInButtonColor,
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                  size: 15.0,
+                                ),
+                                padding: EdgeInsets.all(5.0),
+                                shape: CircleBorder(),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                       SizedBox(
                         height: mediaQuery.height * .02,
                       ),
@@ -96,11 +160,11 @@ class ProductDetails extends StatelessWidget {
                       SizedBox(
                         height: mediaQuery.height * .02,
                       ),
-                      LabelledCard(
-                        label: 'Important notes',
-                        details:
-                            'This is seeds for the plant sunflower,do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  ',
-                      ),
+                      // LabelledCard(
+                      //   label: 'Important notes',
+                      //   details:
+                      //       'This is seeds for the plant sunflower,do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  ',
+                      // ),
                     ],
                   )
                 ],
@@ -117,24 +181,95 @@ class ProductDetails extends StatelessWidget {
 
       bottomNavigationBar: MaterialButton(
         height: mediaQuery.height * 0.1,
-        color: kInActivelogInButtonColor,
+        color: confirmed ? kActiveOrangeColor : kInActivelogInButtonColor,
         onPressed: () {
-          //ToDo: Add to cart. (btn state is changed : text-> remove or go to cart, color changed too)
-          //TODO: ADD TO CART FUNCTION
+          if (confirmed) {
+            showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                      title: Text('Cancel your order'),
+                      content: Text(
+                        'Are you sure you want to delete this item?',
+                        style: TextStyle(
+                            fontSize: 18, color: Colors.grey.shade600),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context, 'No');
+                            setState(() {
+                              confirmed = false;
 
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              duration: Duration(milliseconds: 1500),
-              behavior: SnackBarBehavior.floating,
-              content: Text('Product added to cart'),
-              action: SnackBarAction(
-                label: 'Remove',
-                onPressed: () {
-                  print("saved!");
-                },
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  duration: Duration(milliseconds: 1500),
+                                  behavior: SnackBarBehavior.floating,
+                                  content: Text(
+                                      'Your order has been cancelled successfully'),
+                                ),
+                              );
+                            });
+                          },
+                          child: Text(
+                            'Cancel order',
+                            style: TextStyle(fontSize: 20, color: Colors.grey),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text(
+                            'keep the order',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                      ],
+                    ));
+          } else {
+            showDialog<String>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: Text('Confirm your order'),
+                content: Text(
+                  'by confirming this order we will send you an email within 48 hours, after then you cannot undo it.\nAre you sure you want to by this item?',
+                  style: TextStyle(fontSize: 18, color: Colors.grey.shade600),
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context, 'No');
+                    },
+                    child: Text(
+                      'Cancel order',
+                      style: TextStyle(fontSize: 20, color: Colors.grey),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      //Todo: add order to in progress orders and send email to the seller and buyer
+                      Navigator.pop(context);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          duration: Duration(milliseconds: 1500),
+                          behavior: SnackBarBehavior.floating,
+                          content: Text(
+                              'Your order has been confirmed successfully'),
+                        ),
+                      );
+                      setState(() {
+                        confirmed = true;
+                      });
+                    },
+                    child: Text(
+                      'Buy this item',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          );
+            );
+          }
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -144,10 +279,15 @@ class ProductDetails extends StatelessWidget {
               color: Colors.white,
             ),
             SizedBox(width: 10),
-            Text(
-              'Add to cart',
-              style: klogInButtonTextStyle,
-            ),
+            confirmed
+                ? Text(
+                    'purchase is in progress',
+                    style: klogInButtonTextStyle,
+                  )
+                : Text(
+                    'Buy this item',
+                    style: klogInButtonTextStyle,
+                  ),
           ],
         ),
       ),

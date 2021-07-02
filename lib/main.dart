@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_app/identification_part/identifcationscreen.dart';
@@ -10,6 +11,7 @@ import 'package:gp_app/view/MarketPlaceScreens/EditProductProfile.dart';
 import 'package:gp_app/view/MarketPlaceScreens/MarketPlace.dart';
 import 'package:gp_app/view/MarketPlaceScreens/MyStore.dart';
 import 'package:gp_app/view/MarketPlaceScreens/NearByStores.dart';
+import 'package:gp_app/view/MarketPlaceScreens/OrderScreen.dart';
 import 'package:gp_app/view/MarketPlaceScreens/ProductDetails.dart';
 import 'package:gp_app/view/PlantDetails.dart';
 import 'package:gp_app/view/externalScreens/notificationsScreen.dart';
@@ -28,11 +30,21 @@ import 'package:gp_app/view/profile/articles_List_View.dart';
 import 'package:gp_app/view/profile/followers_grid.dart';
 import 'package:gp_app/view/profile/following.dart';
 import 'package:gp_app/view/profile/ownProfile.dart';
+<<<<<<< HEAD
 import 'package:provider/provider.dart';
+=======
+//<<<<<<< HEAD
+import 'package:provider/provider.dart';
+//=======
+>>>>>>> e9ddaf12c6e77fdf578350f5235e846baee4acc8
 import 'package:gp_app/view/PlantDetails.dart';
 import 'package:provider/provider.dart';
 import 'networking/diohelper.dart';
 import 'view/expert/CreateArticle.dart';
+<<<<<<< HEAD
+=======
+//>>>>>>> c83a391da9fcc3051c08e2d6f42315aa743c1851
+>>>>>>> e9ddaf12c6e77fdf578350f5235e846baee4acc8
 import 'const.dart';
 import 'identification_part/networking/bloc_observer.dart';
 import 'identification_part/networking/cubit_bloc.dart';
@@ -86,12 +98,16 @@ class MyApp extends StatelessWidget {
           ),
         ],
         child: MaterialApp(
+            debugShowCheckedModeBanner: false,
           theme: new ThemeData(
+            fontFamily: 'Cabin',
             appBarTheme: AppBarTheme(
                 backgroundColor: kInActiveBackButtonColor, elevation: 0.5,
                 iconTheme:IconThemeData(color:KTextLightColour),
+
             foregroundColor: Colors.grey.shade700,
             centerTitle: true,
+
           ),
 
           primarySwatch: Colors.green,
@@ -106,6 +122,7 @@ class MyApp extends StatelessWidget {
           FollowingGrid.id: (context) => FollowingGrid(),
 
           PlantDetails.id: (context) => PlantDetails(),
+          OrdersScreen.id: (context) => OrdersScreen(),
           WelcomeScreen1.id: (context) => WelcomeScreen1(),
           EditProfile.id: (context) => EditProfile(),
           ConstWelcomeScreen.id: (context) => ConstWelcomeScreen(),
