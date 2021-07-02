@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_app/identification_part/identifcationscreen.dart';
+import 'package:gp_app/networking/local/shared_prefrences.dart';
 import 'package:gp_app/service/authentication.dart';
 import 'package:gp_app/view/EditProfile.dart';
 import 'package:gp_app/view/MarketPlaceScreens/EditProductProfile.dart';
@@ -27,17 +28,14 @@ import 'package:gp_app/view/profile/articles_List_View.dart';
 import 'package:gp_app/view/profile/followers_grid.dart';
 import 'package:gp_app/view/profile/following.dart';
 import 'package:gp_app/view/profile/ownProfile.dart';
-<<<<<<< HEAD
 import 'package:provider/provider.dart';
-=======
 import 'package:gp_app/view/PlantDetails.dart';
 import 'package:provider/provider.dart';
+import 'networking/diohelper.dart';
 import 'view/expert/CreateArticle.dart';
->>>>>>> c83a391da9fcc3051c08e2d6f42315aa743c1851
 import 'const.dart';
 import 'identification_part/networking/bloc_observer.dart';
 import 'identification_part/networking/cubit_bloc.dart';
-import 'identification_part/networking/dio_helper.dart';
 import 'identification_part/plant_results/plant_result.dart';
 import 'view/MarketPlaceScreens/EditProductProfile.dart';
 import 'view/MarketPlaceScreens/EditProductProfile.dart';
@@ -49,11 +47,27 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver(); // Track Cubit Bloc
   DioHelper.init();
+  await CacheHelper.init();
   await Firebase.initializeApp();
-  runApp(MyApp());
+
+  Widget widget;
+ String token = CacheHelper.getData(key: 'token');
+ if (token != null) widget = Home();
+ else widget = Login();
+
+  runApp(MyApp(
+    startWidget: widget,
+   token: token,
+  ));
 }
 
 class MyApp extends StatelessWidget {
+
+ final Widget startWidget;
+ final String token;
+
+   MyApp({ this.token, this.startWidget}) ;
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -84,7 +98,7 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.grey.shade700,
           // Your app THeme color , used to change drawer colour
         ),
-        home: Home(),
+        home: startWidget,
         initialRoute: Home.id,
         routes: {
             ownProfile.id: (context) => ownProfile(),

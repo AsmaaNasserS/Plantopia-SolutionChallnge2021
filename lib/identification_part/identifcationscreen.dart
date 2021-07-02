@@ -9,6 +9,7 @@ import 'package:gp_app/view/externalScreens/search_screen.dart';
 import 'package:gp_app/view/profile/Profile.dart';
 import 'package:gp_app/view/widgets/side_drawer.dart';
 
+import '../components.dart';
 import '../const.dart';
 import 'networking/cubit_bloc.dart';
 

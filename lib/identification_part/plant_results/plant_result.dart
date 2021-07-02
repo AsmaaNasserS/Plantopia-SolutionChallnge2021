@@ -8,6 +8,7 @@ import 'package:gp_app/view/profile/Home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../../components.dart';
 import '../../const.dart';
 
 class PlantResult extends StatelessWidget {

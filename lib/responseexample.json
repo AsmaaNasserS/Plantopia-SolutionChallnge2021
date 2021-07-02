@@ -1,0 +1,50 @@
+[
+  {
+    "@id": 1,
+    "id": 1,
+    "userName": "mayar",
+    "email": null,
+    "title": null,
+    "password": "mayar",
+    "role": 1,
+    "photo": "bWF5YXIuanBn",
+    "phone": null,
+    "facebookUrl": null,
+    "createdAt": null,
+    "otp": 0,
+    "firstTime": 0,
+    "token": null
+  },
+  {
+    "@id": 2,
+    "id": 2,
+    "userName": "mayarha",
+    "email": "mayar@gmail.com",
+    "title": null,
+    "password": "12345678",
+    "role": 1,
+    "photo": "bWF5YXIuanBn",
+    "phone": null,
+    "facebookUrl": null,
+    "createdAt": null,
+    "otp": 0,
+    "firstTime": 0,
+    "token": null
+  },
+  {
+    "@id": 3,
+    "id": 3,
+    "userName": "menna",
+    "email": null,
+    "title": null,
+    "password": "12345",
+    "role": 0,
+    "photo": null,
+    "phone": null,
+    "facebookUrl": null,
+    "createdAt": null,
+    "otp": 0,
+    "firstTime": 0,
+    "token": null
+  }
+]

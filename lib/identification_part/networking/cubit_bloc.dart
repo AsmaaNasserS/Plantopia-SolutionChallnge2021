@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_app/identification_part/model/plantmodel.dart';
 import 'package:gp_app/identification_part/networking/cubit_states.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dio_helper.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
@@ -27,7 +26,6 @@ class IdentificationCubit extends Cubit<IdentificationStates> {
   List<String> className=[];
   List<String> orderName=[];
   List<String> genusName=[];
-
   List<List> commonName=[];
   List<String> similarImages=[];
   List<String> description =[];
@@ -47,7 +45,7 @@ class IdentificationCubit extends Cubit<IdentificationStates> {
       'api_key': 'KQ7KGhRJpnV0jiiy3qI3K023GYh6OjKMloU9hqbOUtpJ012Pyy',
       'images': images,
       "modifiers": ["similar_images"],
-      "plant_details": ["common_names", "url", "synonyms","wiki_description", "taxonomy"]
+      "plant_details": ["common_names", "taxonomy", "url", "synonyms","wiki_description",]
     };
     http.post( Uri.parse('https://api.plant.id/v2/identify'),
       body: jsonEncode(body),
@@ -75,7 +73,7 @@ class IdentificationCubit extends Cubit<IdentificationStates> {
            description.add(plant.plantDetails.description.value);
            wikiUrl.add(plant.plantDetails.url);
           print(plant.plantName);
-           //print(commonName.elementAt(0));
+           print(commonName.elementAt(0));
         }
       //  print( plantName.length);
        // print(commonName.length);
