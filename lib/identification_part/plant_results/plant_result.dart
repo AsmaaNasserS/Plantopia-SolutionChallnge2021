@@ -251,7 +251,7 @@ class PlantResult extends StatelessWidget {
                           SizedBox(height: 10),
                           TextButton(
                             onPressed: (){
-                              navigateTo(context, WebViewScreen(url: cubit.wikiUrl.elementAt(0)?? '')
+                               navigateTo(context, WebViewScreen(url: cubit.wikiUrl.elementAt(0)?? '')
                               );
                             },
                             child:   Row(

@@ -30,21 +30,15 @@ import 'package:gp_app/view/profile/articles_List_View.dart';
 import 'package:gp_app/view/profile/followers_grid.dart';
 import 'package:gp_app/view/profile/following.dart';
 import 'package:gp_app/view/profile/ownProfile.dart';
-<<<<<<< HEAD
+
 import 'package:provider/provider.dart';
-=======
-//<<<<<<< HEAD
 import 'package:provider/provider.dart';
-//=======
->>>>>>> e9ddaf12c6e77fdf578350f5235e846baee4acc8
+
 import 'package:gp_app/view/PlantDetails.dart';
 import 'package:provider/provider.dart';
 import 'networking/diohelper.dart';
 import 'view/expert/CreateArticle.dart';
-<<<<<<< HEAD
-=======
-//>>>>>>> c83a391da9fcc3051c08e2d6f42315aa743c1851
->>>>>>> e9ddaf12c6e77fdf578350f5235e846baee4acc8
+import 'view/AdminScreen.dart';
 import 'const.dart';
 import 'identification_part/networking/bloc_observer.dart';
 import 'identification_part/networking/cubit_bloc.dart';
@@ -114,13 +108,13 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.grey.shade700,
           // Your app THeme color , used to change drawer colour
         ),
-        home: startWidget,
+        home: Home(),
         initialRoute: Home.id,
         routes: {
             ownProfile.id: (context) => ownProfile(),
           FollowersGrid.id: (context) => FollowersGrid(),
           FollowingGrid.id: (context) => FollowingGrid(),
-
+          AdminPage.id: (context) => AdminPage(),
           PlantDetails.id: (context) => PlantDetails(),
           OrdersScreen.id: (context) => OrdersScreen(),
           WelcomeScreen1.id: (context) => WelcomeScreen1(),
