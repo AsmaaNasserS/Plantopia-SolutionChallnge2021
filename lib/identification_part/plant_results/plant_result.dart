@@ -5,6 +5,7 @@ import 'package:gp_app/identification_part/networking/cubit_bloc.dart';
 import 'package:gp_app/identification_part/networking/cubit_states.dart';
 import 'package:gp_app/identification_part/weview_screen.dart';
 import 'package:gp_app/view/profile/Home.dart';
+import 'package:gp_app/view/profile/NewPostScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -414,7 +415,8 @@ class PlantResult extends StatelessWidget {
                       color: kInActiveOrangeColor,
                       onPressed: () {
                         Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => PlantResult()));
+                          //todo: picture is passed to new post screen
+                            context, MaterialPageRoute(builder: (context) => NewPostScreen()));
 
                       },
                     ),

@@ -69,7 +69,7 @@ class _ownProfileState extends State<ownProfile> {
         backgroundColor: kInActiveBackButtonColor,
         elevation: 0,
         title: Text(
-          'username',
+          'Mayan',
           style: kWelcomeScreensTitleText,
         ),
       ),

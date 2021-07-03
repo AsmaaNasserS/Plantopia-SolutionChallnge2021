@@ -18,7 +18,7 @@ List<User> users=[
    NoOfPosts: '20',
    NoOfFollowers: '302',
    NoOfFollowing: '411',
-   bio: 'ana zhe2tttttttttttttttttttttt\nana zhe2tttttttttttttttttttttt\nana zhe2tttttttttttttttttttttt\nana zhe2tttttttttttttttttttttt\nana zhe2tttttttttttttttttttttt\nana zhe2tttttttttttttttttttttt\n',
+   bio: 'Plant enthusiast, love photography and plant photography.',
   ),
 
   User(

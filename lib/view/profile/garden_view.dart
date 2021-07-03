@@ -100,7 +100,7 @@ class GardenView extends StatelessWidget {
                    Padding(
                      padding: EdgeInsets.all(14.0),
                      child: Text(
-                       'Sabbara',
+                       'Daisy flowers',
                        textAlign: TextAlign.center,
                        style: TextStyle(
                            fontSize: 20,
